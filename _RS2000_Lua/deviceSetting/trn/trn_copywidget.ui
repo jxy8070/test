@@ -1,0 +1,811 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Trn_CopyWidget</class>
+ <widget class="QWidget" name="Trn_CopyWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1320</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>20</y>
+     <width>341</width>
+     <height>401</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>From</string>
+   </property>
+   <widget class="QComboBox" name="comboBox_source">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>80</y>
+      <width>90</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>A-In 1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>A-In 2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>A-In 3</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>A-In 4</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>A-In 5</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>A-In 6</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>A-In 7</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>A-In 8</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>D-In 1L</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>D-In 1R</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>D-In 2L</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>D-In 2R</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Net-In 1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Net-In 2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Net-In 3</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Net-In 4</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Net-In 5</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Net-In 6</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Net-In 7</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Net-In 8</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>A-Out 1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>A-Out 2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>A-Out 3</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>A-Out 4</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>A-Out 5</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>A-Out 6</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>A-Out 7</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>A-Out 8</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>D-Out 1L</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>D-Out 1R</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>D-Out 2L</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>D-Out 2R</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Net-Out 1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Net-Out 2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Net-Out 3</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Net-Out 4</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Net-Out 5</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Net-Out 6</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Net-Out 7</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Net-Out 8</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="comboBox_type">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>80</y>
+      <width>90</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Eq</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Dyn</string>
+     </property>
+    </item>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>20</y>
+     <width>331</width>
+     <height>441</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>To</string>
+   </property>
+   <widget class="QCheckBox" name="AOut8">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>160</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A-Out 8</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="NetOut3">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>300</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Net-Out 3</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="DIn2L">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>220</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>D-In 2L</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="AOut5">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>100</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A-Out 5</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="AIn3">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>60</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A-In 3</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="AIn7">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>140</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A-In 7</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="DIn2R">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>240</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>D-In 2R</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="NetOut1">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>260</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Net-Out 1</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="AOut6">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>120</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A-Out 6</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="AIn8">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>160</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A-In 8</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="NetOut4">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>320</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Net-Out 4</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="NetIn7">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>380</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Net-In 7</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="NetIn3">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>300</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Net-In 3</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="AIn5">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>100</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A-In 5</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="AOut1">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>20</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A-Out 1</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="NetIn4">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>320</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Net-In 4</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="NetIn1">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>260</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Net-In 1</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="DOut2R">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>240</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>D-Out 2R</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="AIn6">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>120</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A-In 6</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="AOut7">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>140</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A-Out 7</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="NetOut2">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>280</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Net-Out 2</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="NetIn5">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>340</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Net-In 5</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="DOut1R">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>200</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>D-Out 1R</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="AIn2">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>40</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A-In 2</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="DIn1L">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>180</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>D-In 1L</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="NetOut6">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>360</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Net-Out 6</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="NetOut8">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>400</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Net-Out 8</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="DOut1L">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>180</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>D-Out 1L</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="AOut2">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>40</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A-Out 2</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="NetOut7">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>380</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Net-Out 7</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="NetOut5">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>340</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Net-Out 5</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="AIn1">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>20</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A-In 1</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="AOut3">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>60</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A-Out 3</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="AOut4">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>80</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A-Out 4</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="NetIn2">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>280</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Net-In 2</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="NetIn6">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>360</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Net-In 6</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="AIn4">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>80</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>A-In 4</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="DIn1R">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>200</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>D-In 1R</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="DOut2L">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>220</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>D-Out 2L</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="NetIn8">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>400</y>
+      <width>90</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Net-In 8</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>820</x>
+     <y>100</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Ok</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

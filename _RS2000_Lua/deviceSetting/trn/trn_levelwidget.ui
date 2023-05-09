@@ -1,0 +1,1365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Trn_LevelWidget</class>
+ <widget class="QWidget" name="Trn_LevelWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1320</width>
+    <height>480</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="Title">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>30</y>
+     <width>311</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>In Level Control</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QSlider" name="verticalSlider">
+   <property name="geometry">
+    <rect>
+     <x>32</x>
+     <y>169</y>
+     <width>19</width>
+     <height>210</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-600</number>
+   </property>
+   <property name="maximum">
+    <number>120</number>
+   </property>
+   <property name="tracking">
+    <bool>false</bool>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="tickPosition">
+    <enum>QSlider::TicksAbove</enum>
+   </property>
+   <property name="tickInterval">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>16</x>
+     <y>145</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Net_Out 8</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>81</x>
+     <y>145</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Net_Out 8</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QSlider" name="verticalSlider_2">
+   <property name="geometry">
+    <rect>
+     <x>97</x>
+     <y>169</y>
+     <width>19</width>
+     <height>210</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-600</number>
+   </property>
+   <property name="maximum">
+    <number>120</number>
+   </property>
+   <property name="tracking">
+    <bool>false</bool>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="tickPosition">
+    <enum>QSlider::TicksAbove</enum>
+   </property>
+   <property name="tickInterval">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>146</x>
+     <y>145</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Net_Out 8</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QSlider" name="verticalSlider_3">
+   <property name="geometry">
+    <rect>
+     <x>162</x>
+     <y>169</y>
+     <width>19</width>
+     <height>210</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-600</number>
+   </property>
+   <property name="maximum">
+    <number>120</number>
+   </property>
+   <property name="tracking">
+    <bool>false</bool>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="tickPosition">
+    <enum>QSlider::TicksAbove</enum>
+   </property>
+   <property name="tickInterval">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>211</x>
+     <y>145</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Net_Out 8</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QSlider" name="verticalSlider_4">
+   <property name="geometry">
+    <rect>
+     <x>227</x>
+     <y>169</y>
+     <width>19</width>
+     <height>210</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-600</number>
+   </property>
+   <property name="maximum">
+    <number>120</number>
+   </property>
+   <property name="tracking">
+    <bool>false</bool>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="tickPosition">
+    <enum>QSlider::TicksAbove</enum>
+   </property>
+   <property name="tickInterval">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>276</x>
+     <y>145</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Net_Out 8</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QSlider" name="verticalSlider_5">
+   <property name="geometry">
+    <rect>
+     <x>292</x>
+     <y>169</y>
+     <width>19</width>
+     <height>210</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-600</number>
+   </property>
+   <property name="maximum">
+    <number>120</number>
+   </property>
+   <property name="tracking">
+    <bool>false</bool>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="tickPosition">
+    <enum>QSlider::TicksAbove</enum>
+   </property>
+   <property name="tickInterval">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>341</x>
+     <y>145</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Net_Out 8</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QSlider" name="verticalSlider_6">
+   <property name="geometry">
+    <rect>
+     <x>357</x>
+     <y>169</y>
+     <width>19</width>
+     <height>210</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-600</number>
+   </property>
+   <property name="maximum">
+    <number>120</number>
+   </property>
+   <property name="tracking">
+    <bool>false</bool>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="tickPosition">
+    <enum>QSlider::TicksAbove</enum>
+   </property>
+   <property name="tickInterval">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>406</x>
+     <y>145</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Net_Out 8</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QSlider" name="verticalSlider_7">
+   <property name="geometry">
+    <rect>
+     <x>422</x>
+     <y>169</y>
+     <width>19</width>
+     <height>210</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-600</number>
+   </property>
+   <property name="maximum">
+    <number>120</number>
+   </property>
+   <property name="tracking">
+    <bool>false</bool>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="tickPosition">
+    <enum>QSlider::TicksAbove</enum>
+   </property>
+   <property name="tickInterval">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_8">
+   <property name="geometry">
+    <rect>
+     <x>471</x>
+     <y>145</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Net_Out 8</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QSlider" name="verticalSlider_8">
+   <property name="geometry">
+    <rect>
+     <x>487</x>
+     <y>169</y>
+     <width>19</width>
+     <height>210</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-600</number>
+   </property>
+   <property name="maximum">
+    <number>120</number>
+   </property>
+   <property name="tracking">
+    <bool>false</bool>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="tickPosition">
+    <enum>QSlider::TicksAbove</enum>
+   </property>
+   <property name="tickInterval">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>536</x>
+     <y>145</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Net_Out 8</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QSlider" name="verticalSlider_9">
+   <property name="geometry">
+    <rect>
+     <x>552</x>
+     <y>169</y>
+     <width>19</width>
+     <height>210</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-600</number>
+   </property>
+   <property name="maximum">
+    <number>120</number>
+   </property>
+   <property name="tracking">
+    <bool>false</bool>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="tickPosition">
+    <enum>QSlider::TicksAbove</enum>
+   </property>
+   <property name="tickInterval">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_10">
+   <property name="geometry">
+    <rect>
+     <x>601</x>
+     <y>145</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Net_Out 8</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QSlider" name="verticalSlider_10">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>169</y>
+     <width>19</width>
+     <height>210</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-600</number>
+   </property>
+   <property name="maximum">
+    <number>120</number>
+   </property>
+   <property name="tracking">
+    <bool>false</bool>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="tickPosition">
+    <enum>QSlider::TicksAbove</enum>
+   </property>
+   <property name="tickInterval">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_11">
+   <property name="geometry">
+    <rect>
+     <x>666</x>
+     <y>145</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Net_Out 8</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QSlider" name="verticalSlider_11">
+   <property name="geometry">
+    <rect>
+     <x>685</x>
+     <y>169</y>
+     <width>19</width>
+     <height>210</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-600</number>
+   </property>
+   <property name="maximum">
+    <number>120</number>
+   </property>
+   <property name="tracking">
+    <bool>false</bool>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="tickPosition">
+    <enum>QSlider::TicksAbove</enum>
+   </property>
+   <property name="tickInterval">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_12">
+   <property name="geometry">
+    <rect>
+     <x>731</x>
+     <y>145</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Net_Out 8</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QSlider" name="verticalSlider_12">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>169</y>
+     <width>19</width>
+     <height>210</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-600</number>
+   </property>
+   <property name="maximum">
+    <number>120</number>
+   </property>
+   <property name="tracking">
+    <bool>false</bool>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="tickPosition">
+    <enum>QSlider::TicksAbove</enum>
+   </property>
+   <property name="tickInterval">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_13">
+   <property name="geometry">
+    <rect>
+     <x>796</x>
+     <y>145</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Net_Out 8</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QSlider" name="verticalSlider_13">
+   <property name="geometry">
+    <rect>
+     <x>815</x>
+     <y>169</y>
+     <width>19</width>
+     <height>210</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-600</number>
+   </property>
+   <property name="maximum">
+    <number>120</number>
+   </property>
+   <property name="tracking">
+    <bool>false</bool>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="tickPosition">
+    <enum>QSlider::TicksAbove</enum>
+   </property>
+   <property name="tickInterval">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_14">
+   <property name="geometry">
+    <rect>
+     <x>861</x>
+     <y>145</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Net_Out 8</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QSlider" name="verticalSlider_14">
+   <property name="geometry">
+    <rect>
+     <x>880</x>
+     <y>169</y>
+     <width>19</width>
+     <height>210</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-600</number>
+   </property>
+   <property name="maximum">
+    <number>120</number>
+   </property>
+   <property name="tracking">
+    <bool>false</bool>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="tickPosition">
+    <enum>QSlider::TicksAbove</enum>
+   </property>
+   <property name="tickInterval">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_15">
+   <property name="geometry">
+    <rect>
+     <x>926</x>
+     <y>145</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Net_Out 8</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QSlider" name="verticalSlider_15">
+   <property name="geometry">
+    <rect>
+     <x>945</x>
+     <y>169</y>
+     <width>19</width>
+     <height>210</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-600</number>
+   </property>
+   <property name="maximum">
+    <number>120</number>
+   </property>
+   <property name="tracking">
+    <bool>false</bool>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="tickPosition">
+    <enum>QSlider::TicksAbove</enum>
+   </property>
+   <property name="tickInterval">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_16">
+   <property name="geometry">
+    <rect>
+     <x>991</x>
+     <y>145</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Net_Out 8</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QSlider" name="verticalSlider_16">
+   <property name="geometry">
+    <rect>
+     <x>1010</x>
+     <y>169</y>
+     <width>19</width>
+     <height>210</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-600</number>
+   </property>
+   <property name="maximum">
+    <number>120</number>
+   </property>
+   <property name="tracking">
+    <bool>false</bool>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="tickPosition">
+    <enum>QSlider::TicksAbove</enum>
+   </property>
+   <property name="tickInterval">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_17">
+   <property name="geometry">
+    <rect>
+     <x>1056</x>
+     <y>145</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Net_Out 8</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QSlider" name="verticalSlider_17">
+   <property name="geometry">
+    <rect>
+     <x>1075</x>
+     <y>169</y>
+     <width>19</width>
+     <height>210</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-600</number>
+   </property>
+   <property name="maximum">
+    <number>120</number>
+   </property>
+   <property name="tracking">
+    <bool>false</bool>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="tickPosition">
+    <enum>QSlider::TicksAbove</enum>
+   </property>
+   <property name="tickInterval">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_18">
+   <property name="geometry">
+    <rect>
+     <x>1121</x>
+     <y>145</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Net_Out 8</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QSlider" name="verticalSlider_18">
+   <property name="geometry">
+    <rect>
+     <x>1140</x>
+     <y>169</y>
+     <width>19</width>
+     <height>210</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-600</number>
+   </property>
+   <property name="maximum">
+    <number>120</number>
+   </property>
+   <property name="tracking">
+    <bool>false</bool>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="tickPosition">
+    <enum>QSlider::TicksAbove</enum>
+   </property>
+   <property name="tickInterval">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_19">
+   <property name="geometry">
+    <rect>
+     <x>1186</x>
+     <y>145</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Net_Out 8</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QSlider" name="verticalSlider_19">
+   <property name="geometry">
+    <rect>
+     <x>1205</x>
+     <y>169</y>
+     <width>19</width>
+     <height>210</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-600</number>
+   </property>
+   <property name="maximum">
+    <number>120</number>
+   </property>
+   <property name="tracking">
+    <bool>false</bool>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="tickPosition">
+    <enum>QSlider::TicksAbove</enum>
+   </property>
+   <property name="tickInterval">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_20">
+   <property name="geometry">
+    <rect>
+     <x>1251</x>
+     <y>145</y>
+     <width>58</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Net_Out 8</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QSlider" name="verticalSlider_20">
+   <property name="geometry">
+    <rect>
+     <x>1270</x>
+     <y>169</y>
+     <width>19</width>
+     <height>210</height>
+    </rect>
+   </property>
+   <property name="minimum">
+    <number>-600</number>
+   </property>
+   <property name="maximum">
+    <number>120</number>
+   </property>
+   <property name="tracking">
+    <bool>false</bool>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <property name="tickPosition">
+    <enum>QSlider::TicksAbove</enum>
+   </property>
+   <property name="tickInterval">
+    <number>30</number>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBox">
+   <property name="geometry">
+    <rect>
+     <x>16</x>
+     <y>390</y>
+     <width>50</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="decimals">
+    <number>1</number>
+   </property>
+   <property name="minimum">
+    <double>-60.000000000000000</double>
+   </property>
+   <property name="maximum">
+    <double>12.000000000000000</double>
+   </property>
+   <property name="singleStep">
+    <double>0.100000000000000</double>
+   </property>
+   <property name="value">
+    <double>0.000000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBox_2">
+   <property name="geometry">
+    <rect>
+     <x>81</x>
+     <y>390</y>
+     <width>50</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="decimals">
+    <number>1</number>
+   </property>
+   <property name="minimum">
+    <double>-60.000000000000000</double>
+   </property>
+   <property name="maximum">
+    <double>12.000000000000000</double>
+   </property>
+   <property name="singleStep">
+    <double>0.100000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBox_3">
+   <property name="geometry">
+    <rect>
+     <x>146</x>
+     <y>390</y>
+     <width>50</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="decimals">
+    <number>1</number>
+   </property>
+   <property name="minimum">
+    <double>-60.000000000000000</double>
+   </property>
+   <property name="maximum">
+    <double>12.000000000000000</double>
+   </property>
+   <property name="singleStep">
+    <double>0.100000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBox_4">
+   <property name="geometry">
+    <rect>
+     <x>211</x>
+     <y>390</y>
+     <width>50</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="decimals">
+    <number>1</number>
+   </property>
+   <property name="minimum">
+    <double>-60.000000000000000</double>
+   </property>
+   <property name="maximum">
+    <double>12.000000000000000</double>
+   </property>
+   <property name="singleStep">
+    <double>0.100000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBox_5">
+   <property name="geometry">
+    <rect>
+     <x>276</x>
+     <y>390</y>
+     <width>50</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="decimals">
+    <number>1</number>
+   </property>
+   <property name="minimum">
+    <double>-60.000000000000000</double>
+   </property>
+   <property name="maximum">
+    <double>12.000000000000000</double>
+   </property>
+   <property name="singleStep">
+    <double>0.100000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBox_6">
+   <property name="geometry">
+    <rect>
+     <x>341</x>
+     <y>390</y>
+     <width>50</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="decimals">
+    <number>1</number>
+   </property>
+   <property name="minimum">
+    <double>-60.000000000000000</double>
+   </property>
+   <property name="maximum">
+    <double>12.000000000000000</double>
+   </property>
+   <property name="singleStep">
+    <double>0.100000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBox_7">
+   <property name="geometry">
+    <rect>
+     <x>406</x>
+     <y>390</y>
+     <width>50</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="decimals">
+    <number>1</number>
+   </property>
+   <property name="minimum">
+    <double>-60.000000000000000</double>
+   </property>
+   <property name="maximum">
+    <double>12.000000000000000</double>
+   </property>
+   <property name="singleStep">
+    <double>0.100000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBox_8">
+   <property name="geometry">
+    <rect>
+     <x>471</x>
+     <y>390</y>
+     <width>50</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="decimals">
+    <number>1</number>
+   </property>
+   <property name="minimum">
+    <double>-60.000000000000000</double>
+   </property>
+   <property name="maximum">
+    <double>12.000000000000000</double>
+   </property>
+   <property name="singleStep">
+    <double>0.100000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBox_9">
+   <property name="geometry">
+    <rect>
+     <x>536</x>
+     <y>390</y>
+     <width>50</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="decimals">
+    <number>1</number>
+   </property>
+   <property name="minimum">
+    <double>-60.000000000000000</double>
+   </property>
+   <property name="maximum">
+    <double>12.000000000000000</double>
+   </property>
+   <property name="singleStep">
+    <double>0.100000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBox_10">
+   <property name="geometry">
+    <rect>
+     <x>604</x>
+     <y>390</y>
+     <width>50</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="decimals">
+    <number>1</number>
+   </property>
+   <property name="minimum">
+    <double>-60.000000000000000</double>
+   </property>
+   <property name="maximum">
+    <double>12.000000000000000</double>
+   </property>
+   <property name="singleStep">
+    <double>0.100000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBox_11">
+   <property name="geometry">
+    <rect>
+     <x>669</x>
+     <y>390</y>
+     <width>50</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="decimals">
+    <number>1</number>
+   </property>
+   <property name="minimum">
+    <double>-60.000000000000000</double>
+   </property>
+   <property name="maximum">
+    <double>12.000000000000000</double>
+   </property>
+   <property name="singleStep">
+    <double>0.100000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBox_12">
+   <property name="geometry">
+    <rect>
+     <x>734</x>
+     <y>390</y>
+     <width>50</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="decimals">
+    <number>1</number>
+   </property>
+   <property name="minimum">
+    <double>-60.000000000000000</double>
+   </property>
+   <property name="maximum">
+    <double>12.000000000000000</double>
+   </property>
+   <property name="singleStep">
+    <double>0.100000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBox_13">
+   <property name="geometry">
+    <rect>
+     <x>799</x>
+     <y>390</y>
+     <width>50</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="decimals">
+    <number>1</number>
+   </property>
+   <property name="minimum">
+    <double>-60.000000000000000</double>
+   </property>
+   <property name="maximum">
+    <double>12.000000000000000</double>
+   </property>
+   <property name="singleStep">
+    <double>0.100000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBox_14">
+   <property name="geometry">
+    <rect>
+     <x>864</x>
+     <y>390</y>
+     <width>50</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="decimals">
+    <number>1</number>
+   </property>
+   <property name="minimum">
+    <double>-60.000000000000000</double>
+   </property>
+   <property name="maximum">
+    <double>12.000000000000000</double>
+   </property>
+   <property name="singleStep">
+    <double>0.100000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBox_15">
+   <property name="geometry">
+    <rect>
+     <x>929</x>
+     <y>390</y>
+     <width>50</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="decimals">
+    <number>1</number>
+   </property>
+   <property name="minimum">
+    <double>-60.000000000000000</double>
+   </property>
+   <property name="maximum">
+    <double>12.000000000000000</double>
+   </property>
+   <property name="singleStep">
+    <double>0.100000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBox_16">
+   <property name="geometry">
+    <rect>
+     <x>994</x>
+     <y>390</y>
+     <width>50</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="decimals">
+    <number>1</number>
+   </property>
+   <property name="minimum">
+    <double>-60.000000000000000</double>
+   </property>
+   <property name="maximum">
+    <double>12.000000000000000</double>
+   </property>
+   <property name="singleStep">
+    <double>0.100000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBox_17">
+   <property name="geometry">
+    <rect>
+     <x>1059</x>
+     <y>390</y>
+     <width>50</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="decimals">
+    <number>1</number>
+   </property>
+   <property name="minimum">
+    <double>-60.000000000000000</double>
+   </property>
+   <property name="maximum">
+    <double>12.000000000000000</double>
+   </property>
+   <property name="singleStep">
+    <double>0.100000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBox_18">
+   <property name="geometry">
+    <rect>
+     <x>1124</x>
+     <y>390</y>
+     <width>50</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="decimals">
+    <number>1</number>
+   </property>
+   <property name="minimum">
+    <double>-60.000000000000000</double>
+   </property>
+   <property name="maximum">
+    <double>12.000000000000000</double>
+   </property>
+   <property name="singleStep">
+    <double>0.100000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBox_19">
+   <property name="geometry">
+    <rect>
+     <x>1189</x>
+     <y>390</y>
+     <width>50</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="decimals">
+    <number>1</number>
+   </property>
+   <property name="minimum">
+    <double>-60.000000000000000</double>
+   </property>
+   <property name="maximum">
+    <double>12.000000000000000</double>
+   </property>
+   <property name="singleStep">
+    <double>0.100000000000000</double>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="doubleSpinBox_20">
+   <property name="geometry">
+    <rect>
+     <x>1254</x>
+     <y>390</y>
+     <width>50</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="decimals">
+    <number>1</number>
+   </property>
+   <property name="minimum">
+    <double>-60.000000000000000</double>
+   </property>
+   <property name="maximum">
+    <double>12.000000000000000</double>
+   </property>
+   <property name="singleStep">
+    <double>0.100000000000000</double>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

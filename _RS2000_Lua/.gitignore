@@ -1,0 +1,9 @@
+﻿/111111
+/debug
+/release
+/temp
+*.user
+Makefile
+*.Debug
+*.Release
+/config/sysDb.db

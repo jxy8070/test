@@ -1,0 +1,125 @@
+/*          play pushButton Image: 32x32                     */
+
+
+QPushButton[form = "play"] {
+    border: 0px solid green;
+    min-height: 32px;
+    min-width: 32px;
+    max-height: 32px;
+    max-width: 32px;
+    border-radius: 16px;
+}
+QPushButton#pushButton_fistBack {
+    image: url(:/Image/AudioPlayer/fistBack_up.png);
+}
+
+QPushButton#pushButton_fistBack:hover {
+    image: url(:/Image/AudioPlayer/fistBack_hover.png);
+}
+
+QPushButton#pushButton_fistBack:pressed {
+    image: url(:/Image/AudioPlayer/fistBack_down.png);
+}
+
+QPushButton#pushButton_fistBack:disabled {
+    image: url(:/Image/AudioPlayer/fistBack_disable.png);
+}
+
+
+QPushButton#pushButton_play {image: url(:/Image/AudioPlayer/play_up.png);}
+QPushButton#pushButton_play:hover {image: url(:/Image/AudioPlayer/play_hover.png);}
+QPushButton#pushButton_play:pressed {image: url(:/Image/AudioPlayer/play_down.png);}
+QPushButton#pushButton_play:disabled {image: url(:/Image/AudioPlayer/play_disable.png);}
+
+QPushButton#pushButton_stop {image: url(:/Image/AudioPlayer/stop_up.png);}
+QPushButton#pushButton_stop:hover {image: url(:/Image/AudioPlayer/stop_hover.png);}
+QPushButton#pushButton_stop:pressed { image: url(:/Image/AudioPlayer/stop_down.png); }
+QPushButton#pushButton_stop:disabled {image: url(:/Image/AudioPlayer/stop_disable.png);}
+
+QPushButton#pushButton_pause {image: url(:/Image/AudioPlayer/pause_up.png);}
+QPushButton#pushButton_pause:hover {image: url(:/Image/AudioPlayer/pause_hover.png);}
+QPushButton#pushButton_pause:checked{image: url(:/Image/AudioPlayer/pause_down.png);}
+QPushButton#pushButton_pause:pressed {image: url(:/Image/AudioPlayer/pause_down.png);}
+QPushButton#pushButton_pause:disabled {image: url(:/Image/AudioPlayer/pause_disable.png);}
+
+
+QPushButton#pushButton_loop {image: url(:/Image/AudioPlayer/loop_up.png);}
+QPushButton#pushButton_loop:hover {image: url(:/Image/AudioPlayer/loop_hover.png);}
+QPushButton#pushButton_loop:pressed {image: url(:/Image/AudioPlayer/loop_down.png);}
+QPushButton#pushButton_loop:checked {image: url(:/Image/AudioPlayer/loop_down.png);}
+QPushButton#pushButton_loop:disabled {image: url(:/Image/AudioPlayer/loop_disable.png);}
+
+QPushButton#pushButton_startup {image: url(:/Image/AudioPlayer/startup_up.png);}
+QPushButton#pushButton_startup:hover {image: url(:/Image/AudioPlayer/startup_hover.png);}
+QPushButton#pushButton_startup:pressed {image: url(:/Image/AudioPlayer/startup_down.png);}
+QPushButton#pushButton_startup:checked {image: url(:/Image/AudioPlayer/startup_down.png);}
+QPushButton#pushButton_startup:disabled {image: url(:/Image/AudioPlayer/startup_disable.png);}
+
+QPushButton#pushButton_record {image: url(:/Image/AudioPlayer/record_up.png);}
+QPushButton#pushButton_record:hover {image: url(:/Image/AudioPlayer/record_hover.png);}
+QPushButton#pushButton_record:pressed {image: url(:/Image/AudioPlayer/record_down.png);}
+QPushButton#pushButton_record:disabled {image: url(:/Image/AudioPlayer/record_disable.png);}
+
+
+QLabel[form = "black"], QLineEdit[form = "black"] {
+    border:1px solid #242424;
+    border-radius:3px;
+    padding:2px;
+    background:#D8D8D8;
+    selection-background-color:#484848;
+    selection-color:#DCDCDC;
+}
+
+
+/*              checkbox Image:  16x16               */
+
+
+
+QCheckBox {
+    spacing: 8px;
+}
+
+QCheckBox::indicator {
+    width: 15px;
+    height: 15px;
+}
+
+QCheckBox::indicator:unchecked {
+    image: url(:/Image/AudioPlayer/checkbox_up_false.png);
+}
+
+QCheckBox::indicator:unchecked:hover {
+    image: url(:/Image/AudioPlayer/checkbox_hover_false.png);
+}
+
+QCheckBox::indicator:unchecked:pressed {
+    image: url(:/Image/AudioPlayer/checkbox_down_false.png);
+}
+
+QCheckBox::indicator:unchecked:disabled {
+    image: url(:/Image/AudioPlayer/checkbox_disable_false.png);
+}
+
+QCheckBox::indicator:checked {
+    image: url(:/Image/AudioPlayer/checkbox_up_true.png);
+}
+
+QCheckBox::indicator:checked:hover {
+    image: url(:/Image/AudioPlayer/checkbox_hover_true.png);
+}
+
+QCheckBox::indicator:checked:pressed {
+    image: url(:/Image/AudioPlayer/checkbox_down_true.png);
+}
+
+QCheckBox::indicator:checked:disabled {
+    image: url(:/Image/AudioPlayer/checkbox_disable_true.png);
+}
+
+/*QCheckBox::indicator:indeterminate:hover {
+    image: url();
+}
+
+QCheckBox::indicator:indeterminate:pressed {
+    image: url();
+}*/

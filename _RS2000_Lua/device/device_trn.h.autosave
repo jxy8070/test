@@ -1,0 +1,107 @@
+﻿#ifndef DEVICE_TRN_H
+#define DEVICE_TRN_H
+
+#include <QString>
+#include "AES70device.h"
+#include "protocal/packetbase.h"
+
+class Device_Trn : public AES70Device
+{
+    Q_OBJECT
+public:
+	enum DeviceTrnSendAllConfigTypeEnum {
+	    SendAllConfigType_None = 0,
+	    SendAllConfigType_Load,
+	    SendAllConfigType_Copy,
+	};
+
+    Device_Trn(const AES70Device* danteDev, QString imx6Ip);
+    Device_Trn(QString mac, DevType devType, QString customName, QString serial, QString imx6Ip);
+    void setImx6IpAddress(QString ipAddress);
+    virtual bool isOnline();
+    virtual QString getDeviceIp() const;
+    virtual void setDeviceIp(QString ipAddress);
+    virtual void setOffline();
+    virtual void serialize(QString fileName);
+    virtual void deserialize(QString fileName);
+    virtual void saveAlarmSetting();
+    virtual void loadAlarmSetting();
+    virtual void clearAlarmSetting();
+    void initData(const ConfigData_Trn& configData);
+    bool checkFirmwareVersion();
+
+public:
+    QStringList getUserName() { return _userName; }
+    void setSendConfigType(DeviceTrnSendAllConfigTypeEnum type) { _sendConfigType = type; }
+    QString imx6Ip() { return _imx6Ip; }
+
+    inline  void setGroup(qint16 group) { _group = group; }
+    inline qint16 getGroup() { return _group; }
+
+public slots:
+    void setUserName(int ch, QString newName);
+    void checkAliveTimerOut();
+
+private:
+    void mixerUserNameSave();
+    void mixerUserNameLoad();
+    void saveFile(QString filename, bool bAppend, QByteArray array);
+
+signals:
+    void dispMeterA(FC_RTU_METER *meter);
+    void dispAutomaticMixer(FC_RTU_AGS_METER *agc_level);
+    void dispFileList(FC_RTU_PLAYFILES *fileList);
+    void deviceOffline();
+    void fileFromDeviceSig(unsigned char *data);
+    void fileFromDeviceEndSig(void);
+    void ParaChangedFromUserSig(unsigned int *data);
+    void SceneChangedFromUserSig(void);
+    void ModuleRtnValueSig(unsigned int *data);
+    void InOutLevelSig(unsigned int *level);
+
+public://处理数据包
+    virtual void processPacket(PacketBase* pack);
+    virtual void sendInitPack();
+    virtual void sendHeartbeatPack();
+    void sendPhantomPack(int channel, bool isOpen);
+    void sendMicGainPack(quint8 ch, qint8 value);
+    void sendAlgorithmSavePack(bool bStart, bool bOverview, quint8 scene_idx, quint32 moduleCount, QByteArray buff);
+    void sendAlgorithmOverviewPack(bool bStart, quint32 moduleCount, QByteArray buff);
+    void sendModuleNamePack(bool bStart, quint32 moduleCount, QByteArray buff);
+    void sendModuleNameSavePack(bool bStart, quint8 scene_idx, quint32 moduleCount, QByteArray buff);
+    void sendAlgorithmDetailPack(quint32 currentContainModuleCount, QByteArray buff);
+    void sendAlgorithmStartPack(void);
+    void sendAlgorithmRealtimePack(quint32 moduleCount, QByteArray buff);
+    void sendUpdatePackage(quint32 totalCount, quint32 offset, quint32 paraLen, QByteArray buff);
+    void sendIP(quint32 ip);
+    void sendNetworkStreamModeSelect(int bank, quint32 mode);
+    void sendGroup();
+    void sendFileToDeviceStartPack(quint32 num);
+    void sendFileToDevicePack(QByteArray buff);
+    void sendFileToDeviceEndPack(void);
+    void sendFileFromDevicePack(void);
+
+    //lua控件的数据包发送
+    bool sendLuaPack(const QByteArray& luaPack);
+    bool sendLuaSubPack(quint32 packIdx, quint32 totalSubCnt, quint32 subCntIdx, quint32 dataLen, const char* dataPtr);
+
+    inline FC_RTU_METER *sendDisplayMeter() { return _meter; }
+public://inline
+    ConfigData_Trn& getConfigData() { return _configData;}
+
+private:
+    QString _imx6Ip;    
+    ConfigData_Trn _configData;
+    QStringList _userName;
+    QDomDocument* _domDoc;
+    QTimer *_checkAliveTimer;
+    DeviceTrnSendAllConfigTypeEnum _sendConfigType;
+    qint16 _group;
+
+    FC_RTU_METER *_meter;
+
+    quint8 transctrl_version[3];
+    quint8 dsp_version[4];
+};
+
+#endif // DEVICE_TRN_H

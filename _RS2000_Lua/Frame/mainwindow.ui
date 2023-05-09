@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1440</width>
+    <height>900</height>
+   </rect>
+  </property>
+  <widget class="QWidget" name="_centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QMdiArea" name="_mdiArea">
+      <property name="background">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>160</red>
+         <green>160</green>
+         <blue>160</blue>
+        </color>
+       </brush>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="PageManager" name="pageManager" native="true">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>25</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>16777215</width>
+        <height>25</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QToolBar" name="_mainToolBar">
+   <property name="windowTitle">
+    <string>tool bar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="_actionNew"/>
+   <addaction name="_actionSave"/>
+   <addaction name="_actionSaveAll"/>
+   <addaction name="_actionImport"/>
+   <addaction name="_actionExport"/>
+   <addaction name="separator"/>
+   <addaction name="_actionDownRouter"/>
+   <addaction name="_actionDownAlgorithm"/>
+   <addaction name="_actionAudioMute"/>
+   <addaction name="actionZoomIn"/>
+   <addaction name="actionZoomOut"/>
+   <addaction name="actionCursor"/>
+   <addaction name="actionHandle"/>
+   <addaction name="separator"/>
+   <addaction name="actionAlignLeft"/>
+   <addaction name="actionAlignRight"/>
+   <addaction name="actionAlignTop"/>
+   <addaction name="actionAlignBottom"/>
+   <addaction name="actionAlignEqHSpace"/>
+   <addaction name="actionAlignEqVSpace"/>
+   <addaction name="separator"/>
+   <addaction name="_actionAbout"/>
+  </widget>
+  <widget class="QStatusBar" name="_mainStatusBar"/>
+  <widget class="QMenuBar" name="_menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1440</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="_menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="_actionSolutionManage"/>
+    <addaction name="_actionNew"/>
+    <addaction name="_actionSave"/>
+    <addaction name="_actionSaveAll"/>
+    <addaction name="_actionExport"/>
+    <addaction name="_actionImport"/>
+    <addaction name="_actionClose"/>
+    <addaction name="_actionSaveToDev"/>
+    <addaction name="_actionLoadFromDev"/>
+    <addaction name="_action_ResourceManager"/>
+    <addaction name="separator"/>
+    <addaction name="_actionLoadCfgSPK"/>
+    <addaction name="_actionLoadCfgAMP"/>
+    <addaction name="_actionLoadCfgTRN"/>
+    <addaction name="separator"/>
+    <addaction name="_actionExit"/>
+   </widget>
+   <widget class="QMenu" name="_menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="_actionStandard"/>
+    <addaction name="_actionStatusBar"/>
+    <addaction name="separator"/>
+    <addaction name="_actionResetViews"/>
+    <addaction name="_actionLogs"/>
+    <addaction name="_actionDbDev"/>
+    <addaction name="_actionDevType"/>
+    <addaction name="_actionProperties"/>
+    <addaction name="_actionDevModel"/>
+    <addaction name="_actionProperties_cfg"/>
+    <addaction name="_actionComponents"/>
+    <addaction name="_actionComponentControls"/>
+    <addaction name="separator"/>
+    <addaction name="_actionDeviceLine"/>
+   </widget>
+   <widget class="QMenu" name="_menuSetting">
+    <property name="title">
+     <string>Setting</string>
+    </property>
+    <widget class="QMenu" name="menuSetting_up_a_Firewall">
+     <property name="title">
+      <string>Setting up a Firewall</string>
+     </property>
+     <addaction name="actionAdd_to_whitelist"/>
+     <addaction name="actionRemove_whitelist"/>
+    </widget>
+    <widget class="QMenu" name="menuUserManage">
+     <property name="title">
+      <string>User Manage</string>
+     </property>
+     <addaction name="_actionUserManage"/>
+     <addaction name="_actionUserLock"/>
+     <addaction name="_actionUserPassword"/>
+    </widget>
+    <widget class="QMenu" name="menuOther_Utils">
+     <property name="title">
+      <string>Other Utils</string>
+     </property>
+     <addaction name="_actionCtrlCenterUtil"/>
+    </widget>
+    <addaction name="_actionDownRouter"/>
+    <addaction name="_actionDownAlgorithm"/>
+    <addaction name="separator"/>
+    <addaction name="menuUserManage"/>
+    <addaction name="menuSetting_up_a_Firewall"/>
+    <addaction name="menuOther_Utils"/>
+    <addaction name="_actionClearOfflineDev"/>
+   </widget>
+   <widget class="QMenu" name="_menuWindow">
+    <property name="title">
+     <string>Window</string>
+    </property>
+    <addaction name="_actionCascade"/>
+    <addaction name="_actionTile"/>
+    <addaction name="_actionMaximize"/>
+   </widget>
+   <widget class="QMenu" name="menuLanguage">
+    <property name="title">
+     <string>Language</string>
+    </property>
+    <addaction name="actionChinese"/>
+    <addaction name="actionEnglish"/>
+   </widget>
+   <widget class="QMenu" name="_menuhelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <widget class="QMenu" name="menuDocuments">
+     <property name="title">
+      <string>Documents</string>
+     </property>
+     <addaction name="_actionSoftwareOperationGuide"/>
+     <addaction name="_actionFunctionModule"/>
+    </widget>
+    <addaction name="menuDocuments"/>
+    <addaction name="_actionAbout"/>
+   </widget>
+   <widget class="QMenu" name="_menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+   </widget>
+   <addaction name="_menuFile"/>
+   <addaction name="_menuEdit"/>
+   <addaction name="_menuView"/>
+   <addaction name="_menuSetting"/>
+   <addaction name="_menuWindow"/>
+   <addaction name="menuLanguage"/>
+   <addaction name="_menuhelp"/>
+  </widget>
+  <action name="_actionNew">
+   <property name="icon">
+    <iconset resource="../Image.qrc">
+     <normaloff>:/Image/Default/new.png</normaloff>:/Image/Default/new.png</iconset>
+   </property>
+   <property name="text">
+    <string>New</string>
+   </property>
+   <property name="toolTip">
+    <string>New</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="_actionClose">
+   <property name="icon">
+    <iconset resource="../Image.qrc">
+     <normaloff>:/Image/Close16X.png</normaloff>:/Image/Close16X.png</iconset>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="_actionSave">
+   <property name="icon">
+    <iconset resource="../Image.qrc">
+     <normaloff>:/Image/Default/save.png</normaloff>:/Image/Default/save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="_actionSaveAll">
+   <property name="icon">
+    <iconset resource="../Image.qrc">
+     <normaloff>:/Image/Default/saveAll.png</normaloff>:/Image/Default/saveAll.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save All</string>
+   </property>
+   <property name="toolTip">
+    <string>Save All</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="_actionImport">
+   <property name="icon">
+    <iconset resource="../Image.qrc">
+     <normaloff>:/Image/Default/import.png</normaloff>:/Image/Default/import.png</iconset>
+   </property>
+   <property name="text">
+    <string>Import</string>
+   </property>
+   <property name="toolTip">
+    <string>Import</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="_actionExport">
+   <property name="icon">
+    <iconset resource="../Image.qrc">
+     <normaloff>:/Image/Default/export.png</normaloff>:/Image/Default/export.png</iconset>
+   </property>
+   <property name="text">
+    <string>Export</string>
+   </property>
+   <property name="toolTip">
+    <string>Export</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="_actionLoadCfgSPK">
+   <property name="text">
+    <string>Load Configure For All Speaker</string>
+   </property>
+  </action>
+  <action name="_actionLoadCfgAMP">
+   <property name="text">
+    <string>Load Configure For All Amplifier</string>
+   </property>
+  </action>
+  <action name="_actionLoadCfgTRN">
+   <property name="text">
+    <string>Load Configure For All TransmitController</string>
+   </property>
+  </action>
+  <action name="_actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="_actionStandard">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Standard</string>
+   </property>
+  </action>
+  <action name="_actionDevice">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Device</string>
+   </property>
+  </action>
+  <action name="_actionStatusBar">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Status Bar</string>
+   </property>
+  </action>
+  <action name="_actionDeviceLine">
+   <property name="text">
+    <string>Device Link</string>
+   </property>
+  </action>
+  <action name="_actionLanguage">
+   <property name="text">
+    <string>Language</string>
+   </property>
+  </action>
+  <action name="actionChinese">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>简体中文</string>
+   </property>
+  </action>
+  <action name="actionEnglish">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>English</string>
+   </property>
+  </action>
+  <action name="_actionDeviceSetting">
+   <property name="text">
+    <string>Device Setting</string>
+   </property>
+  </action>
+  <action name="_actionDeviceView">
+   <property name="text">
+    <string>View Device Setting</string>
+   </property>
+  </action>
+  <action name="_actionUserLock">
+   <property name="text">
+    <string>User Lock</string>
+   </property>
+  </action>
+  <action name="_actionUserPassword">
+   <property name="text">
+    <string>User Password</string>
+   </property>
+  </action>
+  <action name="_actionCascade">
+   <property name="text">
+    <string>Cascade</string>
+   </property>
+  </action>
+  <action name="_actionTile">
+   <property name="text">
+    <string>Tile</string>
+   </property>
+  </action>
+  <action name="_actionMaximize">
+   <property name="text">
+    <string>Maximize</string>
+   </property>
+  </action>
+  <action name="_actionAbout">
+   <property name="icon">
+    <iconset resource="../Image.qrc">
+     <normaloff>:/Image/Default/about.png</normaloff>:/Image/Default/about.png</iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+  </action>
+  <action name="_actionDownRouter">
+   <property name="icon">
+    <iconset resource="../Image.qrc">
+     <normaloff>:/Image/Default/downRouter.png</normaloff>:/Image/Default/downRouter.png</iconset>
+   </property>
+   <property name="text">
+    <string>DownRouter</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="_actionDownAlgorithm">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../Image.qrc">
+     <normaloff>:/Image/Default/debugMode.png</normaloff>:/Image/Default/debugMode.png</iconset>
+   </property>
+   <property name="text">
+    <string>to debug mode</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="_actionSaveToDev">
+   <property name="text">
+    <string>Save To Device</string>
+   </property>
+  </action>
+  <action name="_actionLoadFromDev">
+   <property name="text">
+    <string>Load From Device</string>
+   </property>
+  </action>
+  <action name="_actionClearOfflineDev">
+   <property name="text">
+    <string>Delete Offline Device</string>
+   </property>
+  </action>
+  <action name="actionAlignLeft">
+   <property name="icon">
+    <iconset resource="../Image.qrc">
+     <normaloff>:/Image/Default/AlignLeft.png</normaloff>:/Image/Default/AlignLeft.png</iconset>
+   </property>
+   <property name="text">
+    <string>Align Left</string>
+   </property>
+   <property name="iconText">
+    <string>|&lt;</string>
+   </property>
+   <property name="toolTip">
+    <string>Align Left</string>
+   </property>
+  </action>
+  <action name="actionAlignRight">
+   <property name="icon">
+    <iconset resource="../Image.qrc">
+     <normaloff>:/Image/Default/AlignRight.png</normaloff>:/Image/Default/AlignRight.png</iconset>
+   </property>
+   <property name="text">
+    <string>Align Right</string>
+   </property>
+   <property name="toolTip">
+    <string>Align Right</string>
+   </property>
+  </action>
+  <action name="actionAlignTop">
+   <property name="icon">
+    <iconset resource="../Image.qrc">
+     <normaloff>:/Image/Default/AlignTop.png</normaloff>:/Image/Default/AlignTop.png</iconset>
+   </property>
+   <property name="text">
+    <string>Align Top</string>
+   </property>
+   <property name="toolTip">
+    <string>Align Top</string>
+   </property>
+  </action>
+  <action name="actionAlignBottom">
+   <property name="icon">
+    <iconset resource="../Image.qrc">
+     <normaloff>:/Image/Default/AlignBottom.png</normaloff>:/Image/Default/AlignBottom.png</iconset>
+   </property>
+   <property name="text">
+    <string>Align Bottom</string>
+   </property>
+   <property name="toolTip">
+    <string>Align Bottom</string>
+   </property>
+  </action>
+  <action name="actionAlignEqHSpace">
+   <property name="icon">
+    <iconset resource="../Image.qrc">
+     <normaloff>:/Image/Default/AlignEqSpaceH.png</normaloff>:/Image/Default/AlignEqSpaceH.png</iconset>
+   </property>
+   <property name="text">
+    <string>HSpace</string>
+   </property>
+   <property name="toolTip">
+    <string>HSpace</string>
+   </property>
+  </action>
+  <action name="actionAlignEqVSpace">
+   <property name="icon">
+    <iconset resource="../Image.qrc">
+     <normaloff>:/Image/Default/AlignEqSpaceV.png</normaloff>:/Image/Default/AlignEqSpaceV.png</iconset>
+   </property>
+   <property name="text">
+    <string>VSpace</string>
+   </property>
+   <property name="toolTip">
+    <string>VSpace</string>
+   </property>
+  </action>
+  <action name="actionZoomIn">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../Image.qrc">
+     <normaloff>:/Image/Default/ZoomIn.png</normaloff>:/Image/Default/ZoomIn.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom In</string>
+   </property>
+   <property name="toolTip">
+    <string>Zoom In</string>
+   </property>
+  </action>
+  <action name="actionZoomOut">
+   <property name="icon">
+    <iconset resource="../Image.qrc">
+     <normaloff>:/Image/Default/ZoomOut.png</normaloff>:/Image/Default/ZoomOut.png</iconset>
+   </property>
+   <property name="text">
+    <string>Zoom Out</string>
+   </property>
+   <property name="toolTip">
+    <string>Zoom Out</string>
+   </property>
+  </action>
+  <action name="actionCursor">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../PropertyBrowser/qtpropertybrowser.qrc">
+     <normaloff>:/qt-project.org/qtpropertybrowser/images/cursor-arrow.png</normaloff>:/qt-project.org/qtpropertybrowser/images/cursor-arrow.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cursor</string>
+   </property>
+  </action>
+  <action name="actionHandle">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../PropertyBrowser/qtpropertybrowser.qrc">
+     <normaloff>:/qt-project.org/qtpropertybrowser/images/cursor-openhand.png</normaloff>:/qt-project.org/qtpropertybrowser/images/cursor-openhand.png</iconset>
+   </property>
+   <property name="text">
+    <string>Handle</string>
+   </property>
+  </action>
+  <action name="_actionDevType">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Devices</string>
+   </property>
+   <property name="toolTip">
+    <string>Devices</string>
+   </property>
+  </action>
+  <action name="_actionProperties">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Properties</string>
+   </property>
+   <property name="toolTip">
+    <string>Properties</string>
+   </property>
+  </action>
+  <action name="_actionComponents">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Components</string>
+   </property>
+   <property name="toolTip">
+    <string>Components</string>
+   </property>
+  </action>
+  <action name="_actionSoftwareOperationGuide">
+   <property name="text">
+    <string>Software Operation Guide</string>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="_actionFunctionModule">
+   <property name="text">
+    <string>Function module</string>
+   </property>
+   <property name="shortcut">
+    <string>F2</string>
+   </property>
+  </action>
+  <action name="_actionComponentControls">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Component Controls Info</string>
+   </property>
+   <property name="toolTip">
+    <string>View Component Controls Info</string>
+   </property>
+  </action>
+  <action name="_actionDevModel">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Dev Interface</string>
+   </property>
+   <property name="toolTip">
+    <string>Dev Interface</string>
+   </property>
+  </action>
+  <action name="_actionDbDev">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Online Devices</string>
+   </property>
+   <property name="toolTip">
+    <string>View Online Devices</string>
+   </property>
+  </action>
+  <action name="_action_ResourceManager">
+   <property name="text">
+    <string>Resource Manager</string>
+   </property>
+  </action>
+  <action name="_actionProperties_cfg">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Properties</string>
+   </property>
+  </action>
+  <action name="_actionAudioMute">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../Image.qrc">
+     <normaloff>:/Image/Default/AudioOn.png</normaloff>:/Image/Default/AudioOn.png</iconset>
+   </property>
+   <property name="text">
+    <string>Audio Mute</string>
+   </property>
+   <property name="toolTip">
+    <string>Audio Mute</string>
+   </property>
+  </action>
+  <action name="_actionLogs">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Logs</string>
+   </property>
+   <property name="toolTip">
+    <string>Logs</string>
+   </property>
+  </action>
+  <action name="_actionResetViews">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>reset views</string>
+   </property>
+   <property name="toolTip">
+    <string>reset views</string>
+   </property>
+  </action>
+  <action name="actionAdd_to_whitelist">
+   <property name="text">
+    <string>Add to whitelist</string>
+   </property>
+  </action>
+  <action name="actionRemove_whitelist">
+   <property name="text">
+    <string>Remove whitelist</string>
+   </property>
+  </action>
+  <action name="_actionSolution">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>reset views</string>
+   </property>
+   <property name="toolTip">
+    <string>reset views</string>
+   </property>
+  </action>
+  <action name="_actionSolutionManage">
+   <property name="icon">
+    <iconset resource="../Image.qrc">
+     <normaloff>:/Image/solution.png</normaloff>:/Image/solution.png</iconset>
+   </property>
+   <property name="text">
+    <string>Solution Manager</string>
+   </property>
+   <property name="toolTip">
+    <string>Solution Manager</string>
+   </property>
+  </action>
+  <action name="_actionCtrlCenterUtil">
+   <property name="text">
+    <string>Control Center Util</string>
+   </property>
+  </action>
+  <action name="_actionUserManage">
+   <property name="text">
+    <string>User Manage</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>PageManager</class>
+   <extends>QWidget</extends>
+   <header>customWidget/pagemanager.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../Image.qrc"/>
+  <include location="../PropertyBrowser/qtpropertybrowser.qrc"/>
+ </resources>
+ <connections/>
+ <slots>
+  <slot>UserLock()</slot>
+  <slot>StatusBarDisplay(bool)</slot>
+  <slot>ToolBarDisplay(bool)</slot>
+  <slot>OpenClicked()</slot>
+ </slots>
+</ui>

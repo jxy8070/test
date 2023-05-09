@@ -1,0 +1,6900 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Trn_GainWidget</class>
+ <widget class="QWidget" name="Trn_GainWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1176</width>
+    <height>416</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QFrame:hover#frame,
+QFrame:hover#frame_2,
+QFrame:hover#frame_3,
+QFrame:hover#frame_4,
+QFrame:hover#frame_5,
+QFrame:hover#frame_6,
+QFrame:hover#frame_7,
+QFrame:hover#frame_8,
+QFrame:hover#frame_9,
+QFrame:hover#frame_10,
+QFrame:hover#frame_11,
+QFrame:hover#frame_12,
+QFrame:hover#frame_13,
+QFrame:hover#frame_14,
+QFrame:hover#frame_15,
+QFrame:hover#frame_16,
+QFrame:hover#frame_17,
+QFrame:hover#frame_18,
+QFrame:hover#frame_19,
+QFrame:hover#frame_20,
+QFrame:hover#frame_21
+{
+	background-color: rgb(128, 128, 0);
+}
+
+QPushButton
+{
+	background-color: rgb(128, 0, 0);
+	border-color: rgb(0,0,0);
+	border-width: 2px;
+	border-style: solid;
+	border-radius: 4px;
+}
+
+QPushButton:hover
+{
+	background-color: rgb(128, 0, 0);
+	border-color: rgb(0,255,0);
+	border-width: 2px;
+	border-style: solid;
+	border-radius: 4px;
+}
+
+QPushButton::checked
+{
+	background-color: rgb(0, 255, 0);
+	border-color: rgb(0,0,0);
+	border-width: 2px;
+	border-style: solid;
+	border-radius: 4px;
+}</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>10</y>
+     <width>311</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>16</pointsize>
+     <weight>75</weight>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Mic In Gain Control(dB)</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_23">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>70</y>
+     <width>31</width>
+     <height>11</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>A-In1</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_24">
+   <property name="geometry">
+    <rect>
+     <x>454</x>
+     <y>70</y>
+     <width>31</width>
+     <height>11</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>A-In2</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_25">
+   <property name="geometry">
+    <rect>
+     <x>491</x>
+     <y>70</y>
+     <width>31</width>
+     <height>11</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>A-In3</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_26">
+   <property name="geometry">
+    <rect>
+     <x>525</x>
+     <y>70</y>
+     <width>31</width>
+     <height>11</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>A-In4</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_27">
+   <property name="geometry">
+    <rect>
+     <x>560</x>
+     <y>70</y>
+     <width>31</width>
+     <height>11</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>A-In5</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_28">
+   <property name="geometry">
+    <rect>
+     <x>595</x>
+     <y>70</y>
+     <width>31</width>
+     <height>11</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>A-In6</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_29">
+   <property name="geometry">
+    <rect>
+     <x>631</x>
+     <y>70</y>
+     <width>31</width>
+     <height>11</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>A-In7</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_30">
+   <property name="geometry">
+    <rect>
+     <x>665</x>
+     <y>70</y>
+     <width>31</width>
+     <height>11</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>8</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>A-In8</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>377</x>
+     <y>87</y>
+     <width>322</width>
+     <height>315</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>2</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="frame">
+      <property name="minimumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="In4_60">
+       <property name="geometry">
+        <rect>
+         <x>152</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup4</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In3_60">
+       <property name="geometry">
+        <rect>
+         <x>117</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup3</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In1_60">
+       <property name="geometry">
+        <rect>
+         <x>47</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup1</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In8_60">
+       <property name="geometry">
+        <rect>
+         <x>292</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup8</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In2_60">
+       <property name="geometry">
+        <rect>
+         <x>82</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup2</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In6_60">
+       <property name="geometry">
+        <rect>
+         <x>222</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup6</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In5_60">
+       <property name="geometry">
+        <rect>
+         <x>187</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup5</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In7_60">
+       <property name="geometry">
+        <rect>
+         <x>257</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup7</string>
+       </attribute>
+      </widget>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>1</y>
+         <width>31</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>+60dB</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_2">
+      <property name="minimumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="In4_57">
+       <property name="geometry">
+        <rect>
+         <x>152</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup4</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In3_57">
+       <property name="geometry">
+        <rect>
+         <x>117</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup3</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In1_57">
+       <property name="geometry">
+        <rect>
+         <x>47</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup1</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In8_57">
+       <property name="geometry">
+        <rect>
+         <x>292</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup8</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In2_57">
+       <property name="geometry">
+        <rect>
+         <x>82</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup2</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In6_57">
+       <property name="geometry">
+        <rect>
+         <x>222</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup6</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In5_57">
+       <property name="geometry">
+        <rect>
+         <x>187</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup5</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In7_57">
+       <property name="geometry">
+        <rect>
+         <x>257</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup7</string>
+       </attribute>
+      </widget>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>1</y>
+         <width>31</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>+57dB</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_3">
+      <property name="minimumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="In4_54">
+       <property name="geometry">
+        <rect>
+         <x>152</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup4</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In3_54">
+       <property name="geometry">
+        <rect>
+         <x>117</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup3</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In1_54">
+       <property name="geometry">
+        <rect>
+         <x>47</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup1</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In8_54">
+       <property name="geometry">
+        <rect>
+         <x>292</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup8</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In2_54">
+       <property name="geometry">
+        <rect>
+         <x>82</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup2</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In6_54">
+       <property name="geometry">
+        <rect>
+         <x>222</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup6</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In5_54">
+       <property name="geometry">
+        <rect>
+         <x>187</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup5</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In7_54">
+       <property name="geometry">
+        <rect>
+         <x>257</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup7</string>
+       </attribute>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>1</y>
+         <width>31</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>+54dB</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_4">
+      <property name="minimumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="In4_51">
+       <property name="geometry">
+        <rect>
+         <x>152</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup4</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In3_51">
+       <property name="geometry">
+        <rect>
+         <x>117</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup3</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In1_51">
+       <property name="geometry">
+        <rect>
+         <x>47</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup1</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In8_51">
+       <property name="geometry">
+        <rect>
+         <x>292</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup8</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In2_51">
+       <property name="geometry">
+        <rect>
+         <x>82</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup2</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In6_51">
+       <property name="geometry">
+        <rect>
+         <x>222</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup6</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In5_51">
+       <property name="geometry">
+        <rect>
+         <x>187</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup5</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In7_51">
+       <property name="geometry">
+        <rect>
+         <x>257</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup7</string>
+       </attribute>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>1</y>
+         <width>31</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>+51dB</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_5">
+      <property name="minimumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="In4_48">
+       <property name="geometry">
+        <rect>
+         <x>152</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup4</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In3_48">
+       <property name="geometry">
+        <rect>
+         <x>117</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup3</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In1_48">
+       <property name="geometry">
+        <rect>
+         <x>47</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup1</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In8_48">
+       <property name="geometry">
+        <rect>
+         <x>292</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup8</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In2_48">
+       <property name="geometry">
+        <rect>
+         <x>82</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup2</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In6_48">
+       <property name="geometry">
+        <rect>
+         <x>222</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup6</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In5_48">
+       <property name="geometry">
+        <rect>
+         <x>187</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup5</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In7_48">
+       <property name="geometry">
+        <rect>
+         <x>257</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup7</string>
+       </attribute>
+      </widget>
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>1</y>
+         <width>31</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>+48dB</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_6">
+      <property name="minimumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="In4_45">
+       <property name="geometry">
+        <rect>
+         <x>152</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup4</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In3_45">
+       <property name="geometry">
+        <rect>
+         <x>117</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup3</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In1_45">
+       <property name="geometry">
+        <rect>
+         <x>47</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup1</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In8_45">
+       <property name="geometry">
+        <rect>
+         <x>292</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup8</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In2_45">
+       <property name="geometry">
+        <rect>
+         <x>82</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup2</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In6_45">
+       <property name="geometry">
+        <rect>
+         <x>222</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup6</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In5_45">
+       <property name="geometry">
+        <rect>
+         <x>187</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup5</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In7_45">
+       <property name="geometry">
+        <rect>
+         <x>257</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup7</string>
+       </attribute>
+      </widget>
+      <widget class="QLabel" name="label_8">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>1</y>
+         <width>31</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>+45dB</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_7">
+      <property name="minimumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="In4_42">
+       <property name="geometry">
+        <rect>
+         <x>152</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup4</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In3_42">
+       <property name="geometry">
+        <rect>
+         <x>117</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup3</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In1_42">
+       <property name="geometry">
+        <rect>
+         <x>47</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup1</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In8_42">
+       <property name="geometry">
+        <rect>
+         <x>292</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup8</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In2_42">
+       <property name="geometry">
+        <rect>
+         <x>82</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup2</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In6_42">
+       <property name="geometry">
+        <rect>
+         <x>222</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup6</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In5_42">
+       <property name="geometry">
+        <rect>
+         <x>187</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup5</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In7_42">
+       <property name="geometry">
+        <rect>
+         <x>257</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup7</string>
+       </attribute>
+      </widget>
+      <widget class="QLabel" name="label_9">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>1</y>
+         <width>31</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>+42dB</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_8">
+      <property name="minimumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="In4_39">
+       <property name="geometry">
+        <rect>
+         <x>152</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup4</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In3_39">
+       <property name="geometry">
+        <rect>
+         <x>117</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup3</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In1_39">
+       <property name="geometry">
+        <rect>
+         <x>47</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup1</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In8_39">
+       <property name="geometry">
+        <rect>
+         <x>292</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup8</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In2_39">
+       <property name="geometry">
+        <rect>
+         <x>82</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup2</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In6_39">
+       <property name="geometry">
+        <rect>
+         <x>222</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup6</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In5_39">
+       <property name="geometry">
+        <rect>
+         <x>187</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup5</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In7_39">
+       <property name="geometry">
+        <rect>
+         <x>257</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup7</string>
+       </attribute>
+      </widget>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>1</y>
+         <width>31</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>+39dB</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_9">
+      <property name="minimumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="In4_36">
+       <property name="geometry">
+        <rect>
+         <x>152</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup4</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In3_36">
+       <property name="geometry">
+        <rect>
+         <x>117</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup3</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In1_36">
+       <property name="geometry">
+        <rect>
+         <x>47</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup1</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In8_36">
+       <property name="geometry">
+        <rect>
+         <x>292</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup8</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In2_36">
+       <property name="geometry">
+        <rect>
+         <x>82</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup2</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In6_36">
+       <property name="geometry">
+        <rect>
+         <x>222</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup6</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In5_36">
+       <property name="geometry">
+        <rect>
+         <x>187</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup5</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In7_36">
+       <property name="geometry">
+        <rect>
+         <x>257</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup7</string>
+       </attribute>
+      </widget>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>1</y>
+         <width>31</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>+36dB</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_10">
+      <property name="minimumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="In4_33">
+       <property name="geometry">
+        <rect>
+         <x>152</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup4</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In3_33">
+       <property name="geometry">
+        <rect>
+         <x>117</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup3</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In1_33">
+       <property name="geometry">
+        <rect>
+         <x>47</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup1</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In8_33">
+       <property name="geometry">
+        <rect>
+         <x>292</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup8</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In2_33">
+       <property name="geometry">
+        <rect>
+         <x>82</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup2</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In6_33">
+       <property name="geometry">
+        <rect>
+         <x>222</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup6</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In5_33">
+       <property name="geometry">
+        <rect>
+         <x>187</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup5</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In7_33">
+       <property name="geometry">
+        <rect>
+         <x>257</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup7</string>
+       </attribute>
+      </widget>
+      <widget class="QLabel" name="label_12">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>1</y>
+         <width>31</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>+33dB</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_11">
+      <property name="minimumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="In4_30">
+       <property name="geometry">
+        <rect>
+         <x>152</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup4</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In3_30">
+       <property name="geometry">
+        <rect>
+         <x>117</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup3</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In1_30">
+       <property name="geometry">
+        <rect>
+         <x>47</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup1</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In8_30">
+       <property name="geometry">
+        <rect>
+         <x>292</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup8</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In2_30">
+       <property name="geometry">
+        <rect>
+         <x>82</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup2</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In6_30">
+       <property name="geometry">
+        <rect>
+         <x>222</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup6</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In5_30">
+       <property name="geometry">
+        <rect>
+         <x>187</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup5</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In7_30">
+       <property name="geometry">
+        <rect>
+         <x>257</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup7</string>
+       </attribute>
+      </widget>
+      <widget class="QLabel" name="label_13">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>1</y>
+         <width>31</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>+30dB</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_12">
+      <property name="minimumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="In4_27">
+       <property name="geometry">
+        <rect>
+         <x>152</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup4</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In3_27">
+       <property name="geometry">
+        <rect>
+         <x>117</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup3</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In1_27">
+       <property name="geometry">
+        <rect>
+         <x>47</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup1</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In8_27">
+       <property name="geometry">
+        <rect>
+         <x>292</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup8</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In2_27">
+       <property name="geometry">
+        <rect>
+         <x>82</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup2</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In6_27">
+       <property name="geometry">
+        <rect>
+         <x>222</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup6</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In5_27">
+       <property name="geometry">
+        <rect>
+         <x>187</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup5</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In7_27">
+       <property name="geometry">
+        <rect>
+         <x>257</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup7</string>
+       </attribute>
+      </widget>
+      <widget class="QLabel" name="label_14">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>1</y>
+         <width>31</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>+27dB</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_13">
+      <property name="minimumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="In4_24">
+       <property name="geometry">
+        <rect>
+         <x>152</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup4</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In3_24">
+       <property name="geometry">
+        <rect>
+         <x>117</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup3</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In1_24">
+       <property name="geometry">
+        <rect>
+         <x>47</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup1</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In8_24">
+       <property name="geometry">
+        <rect>
+         <x>292</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup8</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In2_24">
+       <property name="geometry">
+        <rect>
+         <x>82</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup2</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In6_24">
+       <property name="geometry">
+        <rect>
+         <x>222</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup6</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In5_24">
+       <property name="geometry">
+        <rect>
+         <x>187</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup5</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In7_24">
+       <property name="geometry">
+        <rect>
+         <x>257</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup7</string>
+       </attribute>
+      </widget>
+      <widget class="QLabel" name="label_15">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>1</y>
+         <width>31</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>+24dB</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_14">
+      <property name="minimumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="In4_21">
+       <property name="geometry">
+        <rect>
+         <x>152</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup4</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In3_21">
+       <property name="geometry">
+        <rect>
+         <x>117</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup3</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In1_21">
+       <property name="geometry">
+        <rect>
+         <x>47</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup1</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In8_21">
+       <property name="geometry">
+        <rect>
+         <x>292</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup8</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In2_21">
+       <property name="geometry">
+        <rect>
+         <x>82</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup2</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In6_21">
+       <property name="geometry">
+        <rect>
+         <x>222</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup6</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In5_21">
+       <property name="geometry">
+        <rect>
+         <x>187</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup5</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In7_21">
+       <property name="geometry">
+        <rect>
+         <x>257</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup7</string>
+       </attribute>
+      </widget>
+      <widget class="QLabel" name="label_16">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>1</y>
+         <width>31</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>+21dB</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_15">
+      <property name="minimumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="In4_18">
+       <property name="geometry">
+        <rect>
+         <x>152</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup4</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In3_18">
+       <property name="geometry">
+        <rect>
+         <x>117</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup3</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In1_18">
+       <property name="geometry">
+        <rect>
+         <x>47</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup1</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In8_18">
+       <property name="geometry">
+        <rect>
+         <x>292</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup8</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In2_18">
+       <property name="geometry">
+        <rect>
+         <x>82</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup2</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In6_18">
+       <property name="geometry">
+        <rect>
+         <x>222</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup6</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In5_18">
+       <property name="geometry">
+        <rect>
+         <x>187</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup5</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In7_18">
+       <property name="geometry">
+        <rect>
+         <x>257</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup7</string>
+       </attribute>
+      </widget>
+      <widget class="QLabel" name="label_17">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>1</y>
+         <width>31</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>+18dB</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_16">
+      <property name="minimumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="In4_15">
+       <property name="geometry">
+        <rect>
+         <x>152</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup4</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In3_15">
+       <property name="geometry">
+        <rect>
+         <x>117</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup3</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In1_15">
+       <property name="geometry">
+        <rect>
+         <x>47</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup1</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In8_15">
+       <property name="geometry">
+        <rect>
+         <x>292</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup8</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In2_15">
+       <property name="geometry">
+        <rect>
+         <x>82</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup2</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In6_15">
+       <property name="geometry">
+        <rect>
+         <x>222</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup6</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In5_15">
+       <property name="geometry">
+        <rect>
+         <x>187</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup5</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In7_15">
+       <property name="geometry">
+        <rect>
+         <x>257</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup7</string>
+       </attribute>
+      </widget>
+      <widget class="QLabel" name="label_18">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>1</y>
+         <width>31</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>+15dB</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_17">
+      <property name="minimumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="In4_12">
+       <property name="geometry">
+        <rect>
+         <x>152</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup4</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In3_12">
+       <property name="geometry">
+        <rect>
+         <x>117</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup3</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In1_12">
+       <property name="geometry">
+        <rect>
+         <x>47</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup1</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In8_12">
+       <property name="geometry">
+        <rect>
+         <x>292</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup8</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In2_12">
+       <property name="geometry">
+        <rect>
+         <x>82</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup2</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In6_12">
+       <property name="geometry">
+        <rect>
+         <x>222</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup6</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In5_12">
+       <property name="geometry">
+        <rect>
+         <x>187</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup5</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In7_12">
+       <property name="geometry">
+        <rect>
+         <x>257</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup7</string>
+       </attribute>
+      </widget>
+      <widget class="QLabel" name="label_19">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>1</y>
+         <width>31</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>+12dB</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_19">
+      <property name="minimumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="In4_9">
+       <property name="geometry">
+        <rect>
+         <x>152</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup4</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In3_9">
+       <property name="geometry">
+        <rect>
+         <x>117</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup3</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In1_9">
+       <property name="geometry">
+        <rect>
+         <x>47</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup1</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In8_9">
+       <property name="geometry">
+        <rect>
+         <x>292</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup8</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In2_9">
+       <property name="geometry">
+        <rect>
+         <x>82</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup2</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In6_9">
+       <property name="geometry">
+        <rect>
+         <x>222</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup6</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In5_9">
+       <property name="geometry">
+        <rect>
+         <x>187</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup5</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In7_9">
+       <property name="geometry">
+        <rect>
+         <x>257</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup7</string>
+       </attribute>
+      </widget>
+      <widget class="QLabel" name="label_31">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>1</y>
+         <width>31</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>+9dB</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_20">
+      <property name="minimumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="In4_6">
+       <property name="geometry">
+        <rect>
+         <x>152</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup4</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In3_6">
+       <property name="geometry">
+        <rect>
+         <x>117</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup3</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In1_6">
+       <property name="geometry">
+        <rect>
+         <x>47</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup1</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In8_6">
+       <property name="geometry">
+        <rect>
+         <x>292</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup8</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In2_6">
+       <property name="geometry">
+        <rect>
+         <x>82</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup2</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In6_6">
+       <property name="geometry">
+        <rect>
+         <x>222</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup6</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In5_6">
+       <property name="geometry">
+        <rect>
+         <x>187</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup5</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In7_6">
+       <property name="geometry">
+        <rect>
+         <x>257</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup7</string>
+       </attribute>
+      </widget>
+      <widget class="QLabel" name="label_33">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>1</y>
+         <width>31</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>+6dB</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_21">
+      <property name="minimumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="In4_3">
+       <property name="geometry">
+        <rect>
+         <x>152</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup4</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In3_3">
+       <property name="geometry">
+        <rect>
+         <x>117</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup3</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In1_3">
+       <property name="geometry">
+        <rect>
+         <x>47</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>false</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup1</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In8_3">
+       <property name="geometry">
+        <rect>
+         <x>292</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup8</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In2_3">
+       <property name="geometry">
+        <rect>
+         <x>82</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup2</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In6_3">
+       <property name="geometry">
+        <rect>
+         <x>222</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup6</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In5_3">
+       <property name="geometry">
+        <rect>
+         <x>187</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup5</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In7_3">
+       <property name="geometry">
+        <rect>
+         <x>257</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup7</string>
+       </attribute>
+      </widget>
+      <widget class="QLabel" name="label_34">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>1</y>
+         <width>31</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>+3dB</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_18">
+      <property name="minimumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>320</width>
+        <height>13</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QPushButton" name="In4_0">
+       <property name="geometry">
+        <rect>
+         <x>152</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup4</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In3_0">
+       <property name="geometry">
+        <rect>
+         <x>117</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup3</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In1_0">
+       <property name="geometry">
+        <rect>
+         <x>47</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup1</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In8_0">
+       <property name="geometry">
+        <rect>
+         <x>292</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup8</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In2_0">
+       <property name="geometry">
+        <rect>
+         <x>82</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup2</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In6_0">
+       <property name="geometry">
+        <rect>
+         <x>222</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup6</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In5_0">
+       <property name="geometry">
+        <rect>
+         <x>187</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup5</string>
+       </attribute>
+      </widget>
+      <widget class="QPushButton" name="In7_0">
+       <property name="geometry">
+        <rect>
+         <x>257</x>
+         <y>1</y>
+         <width>19</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>19</width>
+         <height>11</height>
+        </size>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+       <property name="autoExclusive">
+        <bool>true</bool>
+       </property>
+       <attribute name="buttonGroup">
+        <string notr="true">buttonGroup7</string>
+       </attribute>
+      </widget>
+      <widget class="QLabel" name="label_20">
+       <property name="geometry">
+        <rect>
+         <x>5</x>
+         <y>1</y>
+         <width>31</width>
+         <height>11</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>8</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>0dB</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup7"/>
+  <buttongroup name="buttonGroup3"/>
+  <buttongroup name="buttonGroup5"/>
+  <buttongroup name="buttonGroup4"/>
+  <buttongroup name="buttonGroup2"/>
+  <buttongroup name="buttonGroup6"/>
+  <buttongroup name="buttonGroup1"/>
+  <buttongroup name="buttonGroup8"/>
+ </buttongroups>
+</ui>

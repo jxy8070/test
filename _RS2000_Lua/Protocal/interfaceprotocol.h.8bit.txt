@@ -1,0 +1,2039 @@
+﻿/*
+ * interfaceprotocol.h
+ *
+ *  Created on: 2018年7月24日
+ *      Author: dell
+ */
+
+#ifndef INTERFACEPROTOCOL_H_
+#define INTERFACEPROTOCOL_H_
+//#include "packdatatype.h"
+#define PHY_IN_CHS 16
+#define PHY_OUT_CHS 16
+#define NET_IN_CHS 48 		//aes67+dante
+#define NET_OUT_CHS 48		//aes67+dante
+
+#define DOWNLOADCFG_DATALENGTH 1024
+#define INFORTN_DATALENGTH 1000
+#define DBG_DATALENGTH 512
+#define RTDEVRTN_DATALEN 1024
+
+#define METER_MAXCHANNEL 100
+
+typedef enum{
+    MEM_SHARE_MODE_FREE 			= 0X01,			//空闲模式，输出为0
+    MEM_SHARE_MODE_PROCESS 			= 0X02,			//处理模式，正常输出
+    MEM_SHARE_MODE_DOWNLOAD_DEV 	= 0X04,			//设备和线路规划模式，此模式附带的参数要包含所有设备模块，输出为0，此模式工作完毕，sharc将模式设置为MEM_SHARE_MODE_FREE
+    MEM_SHARE_MODE_DOWNLOAD_PARA 	= 0X08,			//设备初始化参数配置，此模式附带的参数不一定包含所有设备模块，即可分批次设置初始化参数，输出为0，此模式工作完毕，sharc将模式设置为MEM_SHARE_MODE_FREE
+    MEM_SHARE_MODE_PARASET 			= 0X10,			//设备工作时参数配置，此模式设置改变了参数的模块参数，正常输出，此模式工作完毕，sharc将模式设置为MEM_SHARE_MODE_PROCESS
+    MEM_SHARE_MODE_DOWNLOAD_DEVADD 	= 0X20,			//不删除原始设备模块，追加新的模块，此模式工作完毕，sharc将模式设置为MEM_SHARE_MODE_FREE
+    MEM_SHARE_MODE_UPDATELDR 		= 0X01000000,	//LDR升级状态
+    MEM_SHARE_MODE_ERRORDEAL 		= 0X40000000u,	//错误处理状态
+}FC_UPDATEWORK;
+
+typedef enum{
+    MEM_SHARE_RTDEV_NONE 			= 0X00,
+    MEM_SHARE_RTDEV_READING 		= 0X01,			//读数据中
+    MEM_SHARE_RTDEV_READEND 		= 0X02,			//结束读数据,每次重新下载设备后，置位为MEM_SHARE_RTDEV_READEND模式，无论之前是什么状态
+    MEM_SHARE_RTDEV_WRITING 		= 0X04,			//写数据
+    MEM_SHARE_RTDEV_WRITEEND 		= 0X08,			//写数据结束
+}FC_RTDEVRW;
+
+enum{
+    FCT_DEVFAMILY_TYPE_DELAY 		= 0X01, 		//延时器
+    FCT_DEVFAMILY_TYPE_ROUTER 		= 0X02,   		//路由器
+    FCT_DEVFAMILY_TYPE_MIXER		= 0X03, 		//混音器
+    FCT_DEVFAMILY_TYPE_DYN			= 0X04,    		//动态处理
+    FCT_DEVFAMILY_TYPE_EQ			= 0X05,      	//均衡器
+    FCT_DEVFAMILY_TYPE_FILTER 		= 0X06,  		//滤波器
+    FCT_DEVFAMILY_TYPE_SPLIT 		= 0X07,     	//分频器
+    FCT_DEVFAMILY_TYPE_SIGGEN 		= 0X08,   		//信号发生器做为源
+    FCT_DEVFAMILY_TYPE_METER 		= 0X09,     	//仪表显示
+    FCT_DEVFAMILY_TYPE_INPUT 		= 0x0A,    		//输入端口
+    FCT_DEVFAMILY_TYPE_OUTPUT		= 0x0B,    		//输出端口
+    FCT_DEVFAMILY_TYPE_GPI			= 0x0C,    		//GPI模块
+    FCT_DEVFAMILY_TYPE_FREQSHIFT    = 0X0D,			//移频
+    FCT_DEVFAMILY_TYPE_AUTOMIX    	= 0X0E,			//自动混音
+    FCT_DEVFAMILY_TYPE_HARDAEC    	= 0X0F,			//硬件AEC
+    FCT_DEVFAMILY_TYPE_SOFTFIR    	= 0X10,			//FIR滤波器
+    FCT_DEVFAMILY_TYPE_NFC    		= 0X11,			//反馈抑制器
+    FCT_DEVFAMILY_TYPE_PDUCKER    	= 0X12,			//闪避器
+    FCT_DEVFAMILY_TYPE_GAINRAMP    	= 0X13,			//淡入淡出增益模块
+    FCT_DEVFAMILY_TYPE_GAIN    		= 0X14,			//增益模块
+    FCT_DEVFAMILY_TYPE_CROSSFADER   = 0X15,			//信道交叉
+    FCT_DEVFAMILY_TYPE_SOFTAEC    	= 0X16,			//软件AEC
+    FCT_DEVFAMILY_TYPE_AUDIOPLAYER  = 0XD0,			//播放器
+    FCT_DEVFAMILY_TYPE_AUDIORECORDER= 0XD1,			//录音器
+    FCT_DEVFAMILY_TYPE_SIGSWITCH    = 0XE0,			//特殊
+};
+enum{
+    FCT_GENUS_SDELY_5 				= 0x00,			//最大延时5ms
+    FCT_GENUS_SDELY_10 				= 0x01,
+    FCT_GENUS_SDELY_20 				= 0x02,
+    FCT_GENUS_SDELY_50 				= 0x03,
+    FCT_GENUS_SDELY_100 			= 0x04,
+    FCT_GENUS_SDELY_500 			= 0x05,
+    FCT_GENUS_SDELY_1000 			= 0x06,
+    FCT_GENUS_HPDELY_1 				= 0x10,			//最大延时1ms
+    FCT_GENUS_HPDELY_5 				= 0x11,			//最大延时5ms
+    FCT_GENUS_HPDELY_10 			= 0x12,
+    FCT_GENUS_HPDELY_20 			= 0x13,
+    FCT_GENUS_HPDELY_50 			= 0x14,
+};
+
+enum{
+    FCT_GENUS_ROUTER_4 				= 0x00,
+    FCT_GENUS_ROUTER_8 				= 0x01,
+    FCT_GENUS_ROUTER_16 			= 0x02,
+    FCT_GENUS_ROUTER_32 			= 0x03,
+    FCT_GENUS_ROUTER_48 			= 0x04,
+    FCT_GENUS_ROUTER_64 			= 0x05,
+    FCT_GENUS_ROUTER_96 			= 0x06,
+    FCT_GENUS_ROUTER_128 			= 0x07,
+    FCT_GENUS_ROUTER_192 			= 0x08,
+    FCT_GENUS_ROUTER_256 			= 0x09,
+};
+
+enum{
+    FCT_GENUS_MIXER_4X1 			= 0x00,  		//4*1
+    FCT_GENUS_MIXER_4X2 			= 0x01,  		//4*2
+    FCT_GENUS_MIXER_4X4 			= 0x02,  		//4*4
+    FCT_GENUS_MIXER_8X1 			= 0x03,  		//8*1
+    FCT_GENUS_MIXER_8X2 			= 0x04,  		//8*2
+    FCT_GENUS_MIXER_8X4 			= 0x05,  		//8*4
+    FCT_GENUS_MIXER_8X8 			= 0x06,  		//8*8
+    FCT_GENUS_MIXER_16X16 			= 0x07,  		//16*16
+    FCT_GENUS_MIXER_32X32 			= 0x08,  		//32*32
+    FCT_GENUS_MIXER_64X64 			= 0x09,  		//64*64
+};
+
+enum{
+    FCT_GENUS_INPUT_1 				= 0x00,
+    FCT_GENUS_INPUT_2 				= 0x01,
+    FCT_GENUS_INPUT_4 				= 0x02,
+    FCT_GENUS_INPUT_8 				= 0x03,
+    FCT_GENUS_INPUT_16 				= 0x04,
+};
+
+enum{
+    FCT_GENUS_OUTPUT_1				= 0x00,
+    FCT_GENUS_OUTPUT_2				= 0x01,
+    FCT_GENUS_OUTPUT_4				= 0x02,
+    FCT_GENUS_OUTPUT_8				= 0x03,
+    FCT_GENUS_OUTPUT_16				= 0x04,
+};
+enum{
+    FCT_GENUS_DYN_AUTO 				= 0x00,   		//自动增益AGC
+    FCT_GENUS_DYN_COMP 				= 0x01,   		//压缩器
+    FCT_GENUS_DYN_LIMIT 			= 0x02,			//限制器
+    FCT_GENUS_DYN_NOISE 			= 0x03,  		//噪声门
+    FCT_GENUS_DYN_EXPAND 			= 0x04,			//扩展器
+    FCT_GENUS_DYN_PEAK 				= 0x05,   		//削峰器
+};
+enum{
+    FCT_GENUS_PEQ_1 				= 0x00,       	//1波段
+    FCT_GENUS_PEQ_3 				= 0x01,       	//3波段
+    FCT_GENUS_PEQ_5 				= 0x02,       	//5波段
+    FCT_GENUS_PEQ_7 				= 0x03,       	//7波段
+    FCT_GENUS_PEQ_10 				= 0x04,      	//10波段
+    FCT_GENUS_PEQ_16 				= 0x05,      	//16波段
+    FCT_GENUS_GEQ31_SHG1P3 			= 0x06,     	//31段GEQ,1/3倍频
+    FCT_GENUS_GEQ15_SHG2P3 			= 0x07,     	//15段GEQ,2/3倍频
+    FCT_GENUS_GEQ10_SHG1 			= 0x08,     	//10段GEQ,1倍频
+};
+
+enum{
+    FCT_GENUS_FILTER_LP 			= 0x00,
+    FCT_GENUS_FILTER_HP 			= 0x01,
+    FCT_GENUS_FILTER_LS 			= 0x02,
+    FCT_GENUS_FILTER_HS 			= 0x03,
+    FCT_GENUS_FILTER_BP 			= 0x04,
+    FCT_GENUS_FILTER_AP 			= 0x05,
+};
+
+enum{
+    FCT_GENUS_SPLIT_2 				= 0x00,    		//1进2出
+    FCT_GENUS_SPLIT_3 				= 0x01,    		//1进3出
+    FCT_GENUS_SPLIT_4 				= 0x02,   		//1进4出
+};
+
+enum{
+    FCT_GENUS_SIGGEN_SINE 			= 0x00,
+    FCT_GENUS_SIGGEN_NOISE 			= 0x01,
+    FCT_GENUS_SIGGEN_PINKNOISE 		= 0x02,
+};
+enum{
+    FCT_GENUS_METER_1 				= 0x00,
+    FCT_GENUS_METER_2 				= 0x01,
+    FCT_GENUS_METER_4 				= 0x02,
+    FCT_GENUS_METER_8 				= 0x03,
+};
+
+enum{
+    FCT_GENUS_FREQSHIFT				= 0x00,
+    FCT_GENUS_FREQSHIFTP			= 0x01,
+};
+
+enum{
+    FCT_GENUS_AUTOMIXGS_4			= 0x00,
+    FCT_GENUS_AUTOMIXGS_8			= 0x01,
+    FCT_GENUS_AUTOMIXGS_16			= 0x02,
+    FCT_GENUS_AUTOMIXGS_32			= 0x03,
+    FCT_GENUS_AUTOMIXNGAT_4			= 0x10,
+    FCT_GENUS_AUTOMIXNGAT_8			= 0x11,
+    FCT_GENUS_AUTOMIXNGAT_16		= 0x12,
+    FCT_GENUS_AUTOMIXNGAT_32		= 0x13,
+    FCT_GENUS_AUTOMIXNGRT_4			= 0x20,
+    FCT_GENUS_AUTOMIXNGRT_8			= 0x21,
+    FCT_GENUS_AUTOMIXNGRT_16		= 0x22,
+    FCT_GENUS_AUTOMIXNGRT_32		= 0x23,
+};
+
+enum{
+    FCT_GENUS_SIGSWITCH_32 			= 0x00,
+    FCT_GENUS_SIGSWITCH_48 			= 0x01,
+};
+
+enum{
+    FCT_GENUS_SOFTFIR_MONO256		= 0x00,
+    FCT_GENUS_SOFTFIR_MONO512		= 0x01,
+    FCT_GENUS_SOFTFIR_MONO1024		= 0x02,
+    FCT_GENUS_SOFTFIR_STEREO256		= 0x10,
+    FCT_GENUS_SOFTFIR_STEREO512		= 0x11,
+    FCT_GENUS_SOFTFIR_STEREO1024	= 0x12,
+    FCT_GENUS_SOFTFIR_4R256			= 0x20,
+    FCT_GENUS_SOFTFIR_4R512			= 0x21,
+    FCT_GENUS_SOFTFIR_4R1024		= 0x22,
+};
+
+enum{
+    FCT_GENUS_NFC1_8NF				= 0x00,
+    FCT_GENUS_NFC1_16NF				= 0x01,
+    FCT_GENUS_NFC1_24NF				= 0x02,
+    FCT_GENUS_NFC1_32NF				= 0x03,
+};
+
+enum{
+    FCT_GENUS_PDUCKER_4				= 0x00,
+    FCT_GENUS_PDUCKER_8				= 0x01,
+    FCT_GENUS_PDUCKER_16			= 0x02,
+    FCT_GENUS_PDUCKER_32			= 0x03,
+};
+
+enum{
+    FCT_GENUS_GAINRAMP_1			= 0x00,
+    FCT_GENUS_GAINRAMP_2			= 0x01,
+    FCT_GENUS_GAINRAMP_4			= 0x02,
+    FCT_GENUS_GAINRAMP_8			= 0x03,
+    FCT_GENUS_GAINRAMP_16			= 0x04,
+    FCT_GENUS_GAINRAMP_32			= 0x05,
+};
+
+enum{
+    FCT_GENUS_GAIN_1				= 0x00,
+    FCT_GENUS_GAIN_2				= 0x01,
+    FCT_GENUS_GAIN_4				= 0x02,
+    FCT_GENUS_GAIN_8				= 0x03,
+    FCT_GENUS_GAIN_16				= 0x04,
+    FCT_GENUS_GAIN_32				= 0x05,
+};
+
+enum{
+    FCT_GENUS_CROSSFADER_2X1		= 0x00,
+    FCT_GENUS_CROSSFADER_4X2		= 0x01,
+    FCT_GENUS_CROSSFADER_8X4		= 0x02,
+    FCT_GENUS_CROSSFADER_16X8		= 0x03,
+    FCT_GENUS_CROSSFADER_32X16		= 0x04,
+};
+
+enum{
+    FCT_GENUS_SOFTAEC_8K64			= 0x00,
+    FCT_GENUS_SOFTAEC_8K96			= 0x01,
+    FCT_GENUS_SOFTAEC_8K128			= 0x02,
+    FCT_GENUS_SOFTAEC_8K160			= 0x03,
+    FCT_GENUS_SOFTAEC_8K192			= 0x04,
+    FCT_GENUS_SOFTAEC_8K224			= 0x05,
+    FCT_GENUS_SOFTAEC_8K256			= 0x06,
+    FCT_GENUS_SOFTAEC_16K64			= 0x10,
+    FCT_GENUS_SOFTAEC_16K96			= 0x11,
+    FCT_GENUS_SOFTAEC_16K128		= 0x12,
+    FCT_GENUS_SOFTAEC_16K160		= 0x13,
+    FCT_GENUS_SOFTAEC_16K192		= 0x14,
+    FCT_GENUS_SOFTAEC_16K224		= 0x15,
+    FCT_GENUS_SOFTAEC_16K256		= 0x16,
+    FCT_GENUS_SOFTAEC_48K64			= 0x20,
+    FCT_GENUS_SOFTAEC_48K96			= 0x21,
+    FCT_GENUS_SOFTAEC_48K128		= 0x22,
+    FCT_GENUS_SOFTAEC_48K160		= 0x23,
+    FCT_GENUS_SOFTAEC_48K192		= 0x24,
+    FCT_GENUS_SOFTAEC_48K224		= 0x25,
+    FCT_GENUS_SOFTAEC_48K256		= 0x26,
+};
+
+enum{
+    FCT_GENUS_AUDIOPLAYER_1			= 0x00,
+    FCT_GENUS_AUDIOPLAYER_2			= 0x01,
+    FCT_GENUS_AUDIOPLAYER_4			= 0x02,
+    FCT_GENUS_AUDIOPLAYER_8			= 0x03,
+    FCT_GENUS_AUDIOPLAYER_16		= 0x04,
+};
+
+enum{
+    FCT_GENUS_AUDIORECORDER_1		= 0x00,
+    FCT_GENUS_AUDIORECORDER_2		= 0x01,
+    FCT_GENUS_AUDIORECORDER_4		= 0x02,
+    FCT_GENUS_AUDIORECORDER_8		= 0x03,
+    FCT_GENUS_AUDIORECORDER_16		= 0x04,
+};
+
+typedef struct{
+    __OPACK32_T4(
+        OPACKU,hardwareV,8,		//硬件版本号
+        OPACKU,factorV,8,		//厂家版本
+        OPACKU,mainV,8,			//大功能更新
+        OPACKU,secV,8			//同一次版本号，老上位机兼容新的固件，新上位机软件执行老的固件可能会丢失功能，更新次版本号后新固件不兼容老上位机软件
+    );
+    __OPACK32_T4(
+        OPACKU,thirdV,8,		//功能性模块增加（减少或删除会更新secV）
+        OPACKU,fourthV,8,		//bug修复，完善
+        OPACKU,reverse1,8,		//保留
+        OPACKU,reverse2,8		//保留
+    );
+}FC_VP_FIRMWARE;				//音频处理固件
+
+typedef struct{
+    __OPACK32_T8(
+        OPACKU,HW_GPI1,4,
+        OPACKU,HW_GPI2,4,
+        OPACKU,HW_GPI3,4,
+        OPACKU,HW_GPI4,4,
+        OPACKU,HW_GPI5,4,
+        OPACKU,HW_GPI6,4,
+        OPACKU,HW_GPI7,4,
+        OPACKU,HW_GPI8,4
+    );
+}FC_HARDWARE_GPIS;				//音频处理固件
+
+//其它
+//最大16384个int数据
+typedef struct{
+    FC_UPDATEWORK 	downloadOrCfg_UpdateFlag;
+    unsigned int 	downloadOrCfg_effectData;
+    unsigned int 	downloadOrCfg_checksum;
+    unsigned int 	downloadOrCfg_data[DOWNLOADCFG_DATALENGTH];
+    unsigned int 	infoRtn_data[INFORTN_DATALENGTH];
+    FC_VP_FIRMWARE	vpcore_firmwareV;
+    FC_HARDWARE_GPIS hwGpis;
+    unsigned int	reverseA[21];
+    unsigned int 	dbgRtn_data[DBG_DATALENGTH];
+    FC_RTDEVRW 		rtDevRtn_RWFlag;
+    unsigned int 	rtDevRtn_effectData;
+    unsigned int 	rtDevRtn_checksum;
+    unsigned int 	rtDevRtn_data[RTDEVRTN_DATALEN];		//实时返回的数据量最大不能超过RTDEVRTN_DATALEN,否则会奔溃
+}FC_MEMSHAREPARA;
+
+typedef struct{
+    unsigned int r_sport0fserror;
+    unsigned int r_sport1fserror;
+    unsigned int r_sport2fserror;
+    unsigned int r_sport3fserror;
+}FC_DBGDATA;
+
+typedef struct{
+    unsigned int totalBytes;
+    unsigned int frameNo;
+    int ldrdata[512];
+}FC_UPDATELDR;
+
+typedef struct{
+    struct{
+        __OPACK32_T2(
+            OPACKU,vu,16,
+            OPACKU,ppm,16
+        );
+    }phyInLevel[PHY_IN_CHS];
+    struct{
+        __OPACK32_T2(
+            OPACKU,vu,16,
+            OPACKU,ppm,16
+        );
+    }phyOutLevel[PHY_OUT_CHS];
+    struct{
+        __OPACK32_T2(
+            OPACKU,vu,16,
+            OPACKU,ppm,16
+        );
+    }netInLevel[NET_IN_CHS];
+    struct{
+        __OPACK32_T2(
+            OPACKU,vu,16,
+            OPACKU,ppm,16
+        );
+    }netOutLevel[NET_OUT_CHS];
+#if 0
+    struct{
+        __OPACK32_T3S0S1S2(
+            OPACKU,modeUnitNum,8,
+            OPACKU,channelNum,7,
+            OPACKU,effect,1
+        );
+        __OPACK32_T2(
+            OPACKU,vu,16,
+            OPACKU,ppm,16
+        );
+    }meter[METER_MAXCHANNEL];
+#else
+    struct{
+        __OPACK32_T4(
+            OPACKU,modeUnitNum,8,
+            OPACKU,channelNum,7,
+            OPACKU,effect,1,
+            OPACKU,modeUnitNumU,8
+        );
+        __OPACK32_T2(
+            OPACKU,vu,16,
+            OPACKU,ppm,16
+        );
+    }meter[METER_MAXCHANNEL];
+#endif
+}FC_INFO_TO_RTU;
+
+typedef struct{
+    __OPACK32_T2S0S1(
+        OPACKU,moduleAmountL,8,
+        OPACKU,moduleAmountH,8
+    );
+}IG_Global_HEAD;
+
+
+typedef struct{
+    __OPACK32_T3(
+        OPACKU,genus,8,						//小类（属），例如不同种类的延时
+        OPACKU,family,8,					//大类（科），例如延时，eq之类
+        OPACKU,blockLen32b,16
+    );
+}IG_SIGFLOW_MODULEHEAD;
+
+typedef struct{
+    __OPACK32_T3(
+        OPACKU,moduleNo,8,
+        OPACKU,moduleNoU,8,
+        OPACKU,blockLen32b,16
+    );
+}IG_PARASET_MODULEHEAD;
+
+typedef struct{
+    __OPACK32_T2(
+        OPACKU,moduleNo,16,
+        OPACKU,moduleLen32b,16
+    );
+}IG_PARAGET_MODULEHEAD;
+
+typedef struct{
+    __OPACK32_T2S0S1(OPACKU,columnA,8, OPACKU,lineA,8);
+}IG_SIGFLOW_SINGLE;
+typedef struct{
+    __OPACK32_T4(OPACKU,columnA,8, OPACKU,lineA,8, OPACKU,columnB,8, OPACKU,lineB,8);
+}IG_SIGFLOW_DOUBLE;
+
+typedef struct{
+    IG_SIGFLOW_SINGLE moutFlow[1];
+}IG_SIGFLOW0X1;//0xff可视为无效输入,输出
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE outFlow[1];
+}IG_SIGFLOW0X2;//0xff可视为无效输入,输出
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE outFlow[2];
+}IG_SIGFLOW0X4;//0xff可视为无效输入,输出
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE outFlow[4];
+}IG_SIGFLOW0X8;//0xff可视为无效输入,输出
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE outFlow[8];
+}IG_SIGFLOW0X16;//0xff可视为无效输入,输出
+
+typedef struct{
+    IG_SIGFLOW_SINGLE minFlow[1];
+}IG_SIGFLOW1X0;//0xff可视为无效输入,输出
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[1];
+}IG_SIGFLOW2X0;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[2];
+}IG_SIGFLOW4X0;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[4];
+}IG_SIGFLOW8X0;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[8];
+}IG_SIGFLOW16X0;
+
+typedef struct{
+    IG_SIGFLOW_SINGLE minFlow[1];
+    IG_SIGFLOW_SINGLE moutFlow[1];
+}IG_SIGFLOW1X1;//0xff可视为无效输入,输出
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[1];
+    IG_SIGFLOW_SINGLE moutFlow[1];
+}IG_SIGFLOW2X1;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[2];
+    IG_SIGFLOW_SINGLE moutFlow[1];
+}IG_SIGFLOW4X1;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[4];
+    IG_SIGFLOW_SINGLE moutFlow[1];
+}IG_SIGFLOW8X1;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[8];
+    IG_SIGFLOW_SINGLE moutFlow[1];
+}IG_SIGFLOW16X1;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[1];
+    IG_SIGFLOW_DOUBLE outFlow[1];
+}IG_SIGFLOW2X2;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[2];
+    IG_SIGFLOW_DOUBLE outFlow[1];
+}IG_SIGFLOW4X2;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[4];
+    IG_SIGFLOW_DOUBLE outFlow[1];
+}IG_SIGFLOW8X2;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[8];
+    IG_SIGFLOW_DOUBLE outFlow[1];
+}IG_SIGFLOW16X2;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[2];
+    IG_SIGFLOW_DOUBLE outFlow[2];
+}IG_SIGFLOW4X4;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[2];
+    IG_SIGFLOW_SINGLE minFlow[1];
+    IG_SIGFLOW_DOUBLE outFlow[2];
+}IG_SIGFLOW5X4;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[4];
+    IG_SIGFLOW_DOUBLE outFlow[2];
+}IG_SIGFLOW8X4;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[8];
+    IG_SIGFLOW_DOUBLE outFlow[2];
+}IG_SIGFLOW16X4;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[4];
+    IG_SIGFLOW_DOUBLE outFlow[4];
+}IG_SIGFLOW8X8;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[4];
+    IG_SIGFLOW_SINGLE minFlow[1];
+    IG_SIGFLOW_DOUBLE outFlow[4];
+}IG_SIGFLOW9X8;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[8];
+    IG_SIGFLOW_DOUBLE outFlow[4];
+}IG_SIGFLOW16X8;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[8];
+    IG_SIGFLOW_DOUBLE outFlow[16];
+}IG_SIGFLOW16X16;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[8];
+    IG_SIGFLOW_SINGLE minFlow[1];
+    IG_SIGFLOW_DOUBLE outFlow[8];
+}IG_SIGFLOW17X16;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[2];
+    IG_SIGFLOW_DOUBLE outFlow[2];
+    IG_SIGFLOW_SINGLE moutFlow[1];
+}IG_SIGFLOW4X5;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[4];
+    IG_SIGFLOW_DOUBLE outFlow[4];
+    IG_SIGFLOW_SINGLE moutFlow[1];
+}IG_SIGFLOW8X9;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[8];
+    IG_SIGFLOW_DOUBLE outFlow[8];
+    IG_SIGFLOW_SINGLE moutFlow[1];
+}IG_SIGFLOW16X17;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[16];
+    IG_SIGFLOW_SINGLE minFlow[1];
+    IG_SIGFLOW_DOUBLE outFlow[16];
+}IG_SIGFLOW33X32;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[16];
+    IG_SIGFLOW_DOUBLE outFlow[8];
+}IG_SIGFLOW32X16;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[16];
+    IG_SIGFLOW_DOUBLE outFlow[16];
+    IG_SIGFLOW_SINGLE moutFlow[1];
+}IG_SIGFLOW32X33;
+
+typedef struct{
+    IG_SIGFLOW_SINGLE minFlow[1];
+    IG_SIGFLOW_DOUBLE outFlow[1];
+}IG_SIGFLOW1X2;
+
+typedef struct{
+    IG_SIGFLOW_SINGLE minFlow[1];
+    IG_SIGFLOW_DOUBLE outFlow[1];
+    IG_SIGFLOW_SINGLE moutFlow[1];
+}IG_SIGFLOW1X3;
+
+typedef struct{
+    IG_SIGFLOW_SINGLE minFlow[1];
+    IG_SIGFLOW_DOUBLE outFlow[2];
+}IG_SIGFLOW1X4;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[16];
+    IG_SIGFLOW_DOUBLE outFlow[16];
+}IG_SIGFLOW32X32;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[24];
+    IG_SIGFLOW_DOUBLE outFlow[24];
+}IG_SIGFLOW48X48;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[32];
+    IG_SIGFLOW_DOUBLE outFlow[32];
+}IG_SIGFLOW64X64;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[48];
+    IG_SIGFLOW_DOUBLE outFlow[48];
+}IG_SIGFLOW96X96;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[64];
+    IG_SIGFLOW_DOUBLE outFlow[64];
+}IG_SIGFLOW128X128;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[96];
+    IG_SIGFLOW_DOUBLE outFlow[96];
+}IG_SIGFLOW192X192;
+
+typedef struct{
+    IG_SIGFLOW_DOUBLE inFlow[128];
+    IG_SIGFLOW_DOUBLE outFlow[128];
+}IG_SIGFLOW256X256;
+
+
+typedef IG_SIGFLOW1X1 IG_SIGFLOW_DELAY;
+typedef struct{
+    __OPACK32_T2S0S1(
+        OPACKU,delaySwitch,8,		//1开，0关
+        OPACKU,delayT_ms,16			//延时
+    );
+}IG_PARACTL_DELAY;
+typedef struct{
+    __OPACK32_T2S0S1(
+        OPACKU,delaySwitch,8,		//1开，0关
+        OPACKU,delayT_us,16			//延时
+    );
+}IG_PARACTL_HPDELAY;
+
+typedef struct{
+    __OPACK32_T1S0(OPACKU,inChannel,8);
+    IG_SIGFLOW_SINGLE moutFlow[1];
+}IG_SIGFLOW_INPUT1;//0xff可视为无效输入输出
+typedef struct{
+    __OPACK32_T3S0S1S2(
+        OPACKU,mute,4,
+        OPACKU,antiPhase,4,			//1反向，0正向
+        OPACKU,gain,16				//1开，0关,gain_db = gain * 0.01 - 100;
+    );
+}IG_PARACTL_INPUT1;
+
+typedef struct{
+    struct{
+        __OPACK32_T2S0S1(
+            OPACKU,inCh1,8,
+            OPACKU,inCh2,8
+        );
+    }inCh[1];
+    IG_SIGFLOW_DOUBLE outFlow[1];
+}IG_SIGFLOW_INPUT2;//0xff可视为无效输入输出
+typedef struct{
+    unsigned int mute;					//1静音，0正常输出
+    unsigned int antiPhase;				//1反向，0正向
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16				//gain_db = gain * 0.01 - 100;
+        );
+    }gain[1];
+}IG_PARACTL_INPUT2;
+
+typedef struct{
+    struct{
+        __OPACK32_T4(
+            OPACKU,inCh1,8,
+            OPACKU,inCh2,8,
+            OPACKU,inCh3,8,
+            OPACKU,inCh4,8
+        );
+    }inCh[1];
+    IG_SIGFLOW_DOUBLE outFlow[2];
+}IG_SIGFLOW_INPUT4;//0xff可视为无效输入输出
+typedef struct{
+    unsigned int mute;					//1静音，0正常输出
+    unsigned int antiPhase;				//1反向，0正向
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16				//gain_db = gain * 0.01 - 100;
+        );
+    }gain[2];
+}IG_PARACTL_INPUT4;
+
+typedef struct{
+    struct{
+        __OPACK32_T4(
+            OPACKU,inCh1,8,
+            OPACKU,inCh2,8,
+            OPACKU,inCh3,8,
+            OPACKU,inCh4,8
+        );
+    }inCh[2];
+    IG_SIGFLOW_DOUBLE outFlow[4];
+}IG_SIGFLOW_INPUT8;//0xff可视为无效输入输出
+typedef struct{
+    unsigned int mute;					//1静音，0正常输出
+    unsigned int antiPhase;				//1反向，0正向
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16				//gain_db = gain * 0.01 - 100;
+        );
+    }gain[4];
+}IG_PARACTL_INPUT8;
+
+typedef struct{
+    struct{
+        __OPACK32_T4(
+            OPACKU,inCh1,8,
+            OPACKU,inCh2,8,
+            OPACKU,inCh3,8,
+            OPACKU,inCh4,8
+        );
+    }inCh[4];
+    IG_SIGFLOW_DOUBLE outFlow[8];
+}IG_SIGFLOW_INPUT16;//0xff可视为无效输入输出
+typedef struct{
+    unsigned int mute;					//1静音，0正常输出
+    unsigned int antiPhase;				//1反向，0正向
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16				//gain_db = gain * 0.01 - 100;
+        );
+    }gain[8];
+}IG_PARACTL_INPUT16;
+
+typedef struct{
+    __OPACK32_T1S0(OPACKU,outChannel,8);
+    IG_SIGFLOW_SINGLE minFlow[1];
+}IG_SIGFLOW_OUTPUT1;
+typedef struct{
+    __OPACK32_T3S0S1S2(
+        OPACKU,mute,4,				//1静音，0正常输出
+        OPACKU,antiPhase,4,			//1反向，0正向
+        OPACKU,gain,16				//1开，0关,gain_db = gain * 0.01 - 100;
+    );
+}IG_PARACTL_OUTPUT1;
+
+typedef struct{
+    struct{
+        __OPACK32_T2S0S1(
+            OPACKU,outCh1,8,
+            OPACKU,outCh2,8
+        );
+    }outCh[1];
+    IG_SIGFLOW_DOUBLE inFlow[1];
+}IG_SIGFLOW_OUTPUT2;//0xff可视为无效输入输出
+typedef struct{
+    unsigned int mute;					//1静音，0正常输出
+    unsigned int antiPhase;				//1反向，0正向
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16				//gain_db = gain * 0.01 - 100;
+        );
+    }gain[1];
+}IG_PARACTL_OUTPUT2;
+
+typedef struct{
+    struct{
+        __OPACK32_T4(
+            OPACKU,outCh1,8,
+            OPACKU,outCh2,8,
+            OPACKU,outCh3,8,
+            OPACKU,outCh4,8
+        );
+    }outCh[1];
+    IG_SIGFLOW_DOUBLE inFlow[2];
+}IG_SIGFLOW_OUTPUT4;//0xff可视为无效输入输出
+typedef struct{
+    unsigned int mute;					//1静音，0正常输出
+    unsigned int antiPhase;				//1反向，0正向
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16				//gain_db = gain * 0.01 - 100;
+        );
+    }gain[2];
+}IG_PARACTL_OUTPUT4;
+
+typedef struct{
+    struct{
+        __OPACK32_T4(
+            OPACKU,outCh1,8,
+            OPACKU,outCh2,8,
+            OPACKU,outCh3,8,
+            OPACKU,outCh4,8
+        );
+    }outCh[2];
+    IG_SIGFLOW_DOUBLE inFlow[4];
+}IG_SIGFLOW_OUTPUT8;//0xff可视为无效输入输出
+typedef struct{
+    unsigned int mute;					//1静音，0正常输出
+    unsigned int antiPhase;				//1反向，0正向
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16				//gain_db = gain * 0.01 - 100;
+        );
+    }gain[4];
+}IG_PARACTL_OUTPUT8;
+
+typedef struct{
+    struct{
+        __OPACK32_T4(
+            OPACKU,outCh1,8,
+            OPACKU,outCh2,8,
+            OPACKU,outCh3,8,
+            OPACKU,outCh4,8
+        );
+    }outCh[4];
+    IG_SIGFLOW_DOUBLE inFlow[8];
+}IG_SIGFLOW_OUTPUT16;//0xff可视为无效输入输出
+typedef struct{
+    unsigned int mute;					//1静音，0正常输出
+    unsigned int antiPhase;				//1反向，0正向
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16				//gain_db = gain * 0.01 - 100;
+        );
+    }gain[8];
+}IG_PARACTL_OUTPUT16;
+
+typedef IG_SIGFLOW4X4 IG_SIGFLOW_VROUTER4;
+typedef struct{
+    struct{
+        __OPACK32_T1S0(
+            OPACKU,itoo,8
+        );
+    }routerch[4];
+}IG_PARACTL_VROUTER4;
+
+typedef IG_SIGFLOW8X8 IG_SIGFLOW_VROUTER8;
+typedef struct{
+    struct{
+        __OPACK32_T1S0(
+            OPACKU,itoo,8
+        );
+    }routerch[8];
+}IG_PARACTL_VROUTER8;
+
+typedef IG_SIGFLOW16X16 IG_SIGFLOW_VROUTER16;
+typedef struct{
+    struct{
+        __OPACK32_T1S0(
+            OPACKU,itoo,8
+        );
+    }routerch[16];
+}IG_PARACTL_VROUTER16;
+
+typedef IG_SIGFLOW32X32 IG_SIGFLOW_VROUTER32;
+typedef struct{
+    struct{
+        __OPACK32_T1S0(
+            OPACKU,itoo,8
+        );
+    }routerch[32];
+}IG_PARACTL_VROUTER32;
+
+typedef IG_SIGFLOW48X48 IG_SIGFLOW_VROUTER48;
+typedef struct{
+    struct{
+        __OPACK32_T1S0(
+            OPACKU,itoo,8
+        );
+    }routerch[48];
+}IG_PARACTL_VROUTER48;
+
+typedef IG_SIGFLOW64X64 IG_SIGFLOW_VROUTER64;
+typedef struct{
+    struct{
+        __OPACK32_T1S0(
+            OPACKU,itoo,8
+        );
+    }routerch[64];
+}IG_PARACTL_VROUTER64;
+
+typedef IG_SIGFLOW96X96 IG_SIGFLOW_VROUTER96;
+typedef struct{
+    struct{
+        __OPACK32_T1S0(
+            OPACKU,itoo,8
+        );
+    }routerch[96];
+}IG_PARACTL_VROUTER96;
+
+typedef IG_SIGFLOW128X128 IG_SIGFLOW_VROUTER128;
+typedef struct{
+    struct{
+        __OPACK32_T1S0(
+            OPACKU,itoo,8
+        );
+    }routerch[128];
+}IG_PARACTL_VROUTER128;
+
+typedef IG_SIGFLOW192X192 IG_SIGFLOW_VROUTER192;
+typedef struct{
+    struct{
+        __OPACK32_T1S0(
+            OPACKU,itoo,8
+        );
+    }routerch[192];
+}IG_PARACTL_VROUTER192;
+
+typedef IG_SIGFLOW256X256 IG_SIGFLOW_VROUTER256;
+typedef struct{
+    struct{
+        __OPACK32_T1S0(
+            OPACKU,itoo,8
+        );
+    }routerch[256];
+}IG_PARACTL_VROUTER256;
+
+typedef IG_SIGFLOW4X1 IG_SIGFLOW_VMIXER4X1;
+typedef struct{
+    __OPACK32_T2(
+        OPACKU,inSwitch,16,				//输入开关，每一位对应一路
+        OPACKU,outSwitch,16				//输出开关，每一位对应一路
+    );
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16
+        );
+    }ingain[2];
+    struct{
+        __OPACK32_T1S0(
+            OPACKU,gain,16
+        );
+    }outgain[1];
+    struct{
+        __OPACK32_T1S0(
+            OPACKU,sw,16				//每一位对应一个输入到输出开关
+        );
+    }iToOSwitch[1];						//1对应一个输出通道
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16
+        );
+    }iToOGain[1][2];					//iToOGain[0][0].gainA代表第一个输入通道到第一个输出通道的增益，iToOGain[0][0].gainB代表第二个输入通道到第一个输出通道的增益，
+}IG_PARACTL_VMIXER4X1;
+
+typedef IG_SIGFLOW8X1 IG_SIGFLOW_VMIXER8X1;
+typedef struct{
+    __OPACK32_T2(
+        OPACKU,inSwitch,16,				//输入开关，每一位对应一路
+        OPACKU,outSwitch,16				//输出开关，每一位对应一路
+    );
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16
+        );
+    }ingain[4];
+    struct{
+        __OPACK32_T1S0(
+            OPACKU,gain,16
+        );
+    }outgain[1];
+    struct{
+        __OPACK32_T1S0(
+            OPACKU,sw,16				//每一位对应一个输入到输出开关
+        );
+    }iToOSwitch[1];						//1对应一个输出通道
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16
+        );
+    }iToOGain[1][4];					//iToOGain[0][0].gainA代表第一个输入通道到第一个输出通道的增益，iToOGain[0][0].gainB代表第二个输入通道到第一个输出通道的增益，
+}IG_PARACTL_VMIXER8X1;
+
+typedef IG_SIGFLOW4X2 IG_SIGFLOW_VMIXER4X2;
+typedef struct{
+    __OPACK32_T2(
+        OPACKU,inSwitch,16,				//输入开关，每一位对应一路
+        OPACKU,outSwitch,16				//输出开关，每一位对应一路
+    );
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16
+        );
+    }ingain[2];
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16
+        );
+    }outgain[1];
+    struct{
+        __OPACK32_T2(
+            OPACKU,swA,16,				//每一位对应一个输入到输出开关
+            OPACKU,swB,16				//每一位对应一个输入到输出开关
+        );
+    }iToOSwitch[1];						//1对应一个输出通道应一个输出通道
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16
+        );
+    }iToOGain[2][2];					//iToOGain[0][0].gainA代表第一个输入通道到第一个输出通道的增益，iToOGain[0][0].gainB代表第二个输入通道到第一个输出通道的增益，
+}IG_PARACTL_VMIXER4X2;
+
+typedef IG_SIGFLOW4X4 IG_SIGFLOW_VMIXER4X4;
+typedef struct{
+    __OPACK32_T2(
+        OPACKU,inSwitch,16,				//输入开关，每一位对应一路
+        OPACKU,outSwitch,16				//输出开关，每一位对应一路
+    );
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16
+        );
+    }ingain[2];
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16
+        );
+    }outgain[2];
+    struct{
+        __OPACK32_T2(
+            OPACKU,swA,16,				//每一位对应一个输入到输出开关
+            OPACKU,swB,16				//每一位对应一个输入到输出开关
+        );
+    }iToOSwitch[2];						//1对应一个输出通道应一个输出通道
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16
+        );
+    }iToOGain[4][2];					//iToOGain[0][0].gainA代表第一个输入通道到第一个输出通道的增益，iToOGain[0][0].gainB代表第二个输入通道到第一个输出通道的增益，
+}IG_PARACTL_VMIXER4X4;
+
+typedef IG_SIGFLOW8X2 IG_SIGFLOW_VMIXER8X2;
+typedef struct{
+    __OPACK32_T2(
+        OPACKU,inSwitch,16,				//输入开关，每一位对应一路
+        OPACKU,outSwitch,16				//输出开关，每一位对应一路
+    );
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16
+        );
+    }ingain[4];
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16
+        );
+    }outgain[1];
+    struct{
+        __OPACK32_T2(
+            OPACKU,swA,16,				//每一位对应一个输入到输出开关
+            OPACKU,swB,16				//每一位对应一个输入到输出开关
+        );
+    }iToOSwitch[1];						//1对应一个输出通道应一个输出通道
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16
+        );
+    }iToOGain[2][4];					//iToOGain[0][0].gainA代表第一个输入通道到第一个输出通道的增益，iToOGain[0][0].gainB代表第二个输入通道到第一个输出通道的增益，
+}IG_PARACTL_VMIXER8X2;
+
+typedef IG_SIGFLOW8X4 IG_SIGFLOW_VMIXER8X4;
+typedef struct{
+    __OPACK32_T2(
+        OPACKU,inSwitch,16,				//输入开关，每一位对应一路
+        OPACKU,outSwitch,16				//输出开关，每一位对应一路
+    );
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16
+        );
+    }ingain[4];
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16
+        );
+    }outgain[2];
+    struct{
+        __OPACK32_T2(
+            OPACKU,swA,16,				//每一位对应一个输入到输出开关
+            OPACKU,swB,16				//每一位对应一个输入到输出开关
+        );
+    }iToOSwitch[2];						//1对应一个输出通道应一个输出通道
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16
+        );
+    }iToOGain[4][4];					//iToOGain[0][0].gainA代表第一个输入通道到第一个输出通道的增益，iToOGain[0][0].gainB代表第二个输入通道到第一个输出通道的增益，
+}IG_PARACTL_VMIXER8X4;
+
+typedef IG_SIGFLOW8X8 IG_SIGFLOW_VMIXER8X8;
+typedef struct{
+    __OPACK32_T2(
+        OPACKU,inSwitch,16,				//输入开关，每一位对应一路
+        OPACKU,outSwitch,16				//输出开关，每一位对应一路
+    );
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16
+        );
+    }ingain[4];
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16
+        );
+    }outgain[4];
+    struct{
+        __OPACK32_T2(
+            OPACKU,swA,16,				//每一位对应一个输入到输出开关
+            OPACKU,swB,16				//每一位对应一个输入到输出开关
+        );
+    }iToOSwitch[4];						//1对应一个输出通道应一个输出通道
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16
+        );
+    }iToOGain[8][4];					//iToOGain[0][0].gainA代表第一个输入通道到第一个输出通道的增益，iToOGain[0][0].gainB代表第二个输入通道到第一个输出通道的增益，
+}IG_PARACTL_VMIXER8X8;
+
+typedef IG_SIGFLOW16X16 IG_SIGFLOW_VMIXER16X16;
+typedef struct{
+    __OPACK32_T2(
+        OPACKU,inSwitch,16,				//输入开关，每一位对应一路
+        OPACKU,outSwitch,16				//输出开关，每一位对应一路
+    );
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16
+        );
+    }ingain[8];
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16
+        );
+    }outgain[8];
+    struct{
+        __OPACK32_T2(
+            OPACKU,swA,16,				//每一位对应一个输入到输出开关
+            OPACKU,swB,16				//每一位对应一个输入到输出开关
+        );
+    }iToOSwitch[8];						//1对应一个输出通道应一个输出通道
+    struct{
+        __OPACK32_T2(
+            OPACKU,gainA,16,
+            OPACKU,gainB,16
+        );
+    }iToOGain[16][8];					//iToOGain[0][0].gainA代表第一个输入通道到第一个输出通道的增益，iToOGain[0][0].gainB代表第二个输入通道到第一个输出通道的增益，
+}IG_PARACTL_VMIXER16X16;
+
+typedef IG_SIGFLOW32X32 IG_SIGFLOW_VMIXER32X32;
+typedef struct{
+    struct{
+        __OPACK32_T4(
+            OPACKU,chNo,8,					//0 - 31
+            OPACKU,chType,7,				//0输入,simo有效，1输出，miso有效
+            OPACKU,chSw,1,					//通道开关
+            OPACKU,chGain,16				//通道增益
+        );
+    }cfgChInfo;
+    union{
+        struct{
+            unsigned int simoSwitch[1];		//每一位为输入通道cfgCh对应的一路输出开关(节点开关)
+            struct{
+                __OPACK32_T2(
+                    OPACKU,gainA,16,
+                    OPACKU,gainB,16
+                );
+            }simoGain[16];					//输入通道cfgCh对应的所有输出的节点增益，simoGain[0].gainA代表输入通道cfgCh到第1个输出通道的增益，simoGain[0].gainB代表输入通道cfgCh到第2个输出通道的增益，
+        }simo;
+        struct{
+            unsigned int misoSwitch[1];		//每一位为输出通道cfgCh对应的一个输入开关(节点开关)
+            struct{
+                __OPACK32_T2(
+                    OPACKU,gainA,16,
+                    OPACKU,gainB,16
+                );
+            }misoGain[16];					//输出通道cfgCh对应的所有输入的节点增益，misoGain[0].gainA代表第1个输入通道到输出通道cfgCh的增益，misoGain[0].gainB代表第2个输入通道到输出通道cfgCh的增益，
+        }miso;
+    };
+}IG_PARACTL_VMIXER32X32;					//传输控制
+
+
+typedef IG_SIGFLOW64X64 IG_SIGFLOW_VMIXER64X64;
+typedef struct{
+    struct{
+        __OPACK32_T4(
+            OPACKU,chNo,8,					//0 - 63
+            OPACKU,chType,7,				//0输入,simo有效，1输出，miso有效
+            OPACKU,chSw,1,					//通道开关
+            OPACKU,chGain,16				//通道增益
+        );
+    }cfgChInfo;
+    union{
+        struct{
+            unsigned int simoSwitch[2];		//每一位为输入通道cfgCh对应的一路输出开关(节点开关)
+            struct{
+                __OPACK32_T2(
+                    OPACKU,gainA,16,
+                    OPACKU,gainB,16
+                );
+            }simoGain[32];					//输入通道cfgCh对应的所有输出的节点增益，simoGain[0].gainA代表输入通道cfgCh到第1个输出通道的增益，simoGain[0].gainB代表输入通道cfgCh到第2个输出通道的增益，
+        }simo;
+        struct{
+            unsigned int misoSwitch[2];		//每一位为输出通道cfgCh对应的一个输入开关(节点开关)
+            struct{
+                __OPACK32_T2(
+                    OPACKU,gainA,16,
+                    OPACKU,gainB,16
+                );
+            }misoGain[32];					//输出通道cfgCh对应的所有输入的节点增益，misoGain[0].gainA代表第1个输入通道到输出通道cfgCh的增益，misoGain[0].gainB代表第2个输入通道到输出通道cfgCh的增益，
+        }miso;
+    };
+}IG_PARACTL_VMIXER64X64;					//传输控制
+
+typedef IG_SIGFLOW1X1 IG_SIGFLOW_DYN;
+typedef struct{
+    __OPACK32_T2(
+        OPACKU,threshhold,16,
+        OPACKU,ratio,16					//expand:oiratio = ratio*0.01f;comp,auto:oiratio = 1.0f/ratio
+    );
+    __OPACK32_T2(
+        OPACKU,responseT_ms,16,
+        OPACKU,releaseT_ms,16
+    );
+    __OPACK32_T2(
+        OPACKU,eGain,16,
+        OPACKU,oTargetLevel,16
+    );
+    __OPACK32_T1S0(
+        OPACKU,bypass,8
+    );
+}IG_PARACTL_DYN;
+
+typedef struct{
+    __OPACK32_T2(
+        OPACKU,iLevel,16,
+        OPACKU,oLevel,16
+    );
+}IG_PARAGET_DYN;
+
+typedef IG_SIGFLOW1X1 IG_SIGFLOW_EQ;
+enum{
+    FCT_PEQ_PEAK = 0,		//通用滤波器
+    FCT_PEQ_HPASS = 1,		//低通
+    FCT_PEQ_LPASS = 2,		//高通
+    FCT_PEQ_HSHELF = 3,		//高架
+    FCT_PEQ_LSHELF = 4,		//低架
+};
+typedef struct{
+    __OPACK32_T2(
+        OPACKU,freq_hz,16,			//hz
+        OPACKU,gain,16				//gain_db = gain * 0.01 - 100;
+    );
+    __OPACK32_T2S0S1(
+        OPACKU,q,16,					//q = (float)q * 0.01;
+        OPACKU,eq_type,4				//eq类型
+    );
+}IG_PARACTL_PEQ_C;
+
+typedef struct{
+    IG_PARACTL_PEQ_C eqp[1];
+    unsigned int bypass;				//bypass
+    unsigned int smooth;				//smooth
+}IG_PARACTL_PEQ1;
+typedef struct{
+    IG_PARACTL_PEQ_C eqp[3];
+    unsigned int bypass;				//bypass
+    unsigned int smooth;				//smooth
+}IG_PARACTL_PEQ3;
+typedef struct{
+    IG_PARACTL_PEQ_C eqp[5];
+    unsigned int bypass;				//bypass
+    unsigned int smooth;				//smooth
+}IG_PARACTL_PEQ5;
+typedef struct{
+    IG_PARACTL_PEQ_C eqp[7];
+    unsigned int bypass;				//bypass
+    unsigned int smooth;				//smooth
+}IG_PARACTL_PEQ7;
+typedef struct{
+    IG_PARACTL_PEQ_C eqp[10];
+    unsigned int bypass;				//bypass
+    unsigned int smooth;				//smooth
+}IG_PARACTL_PEQ10;
+typedef struct{
+    IG_PARACTL_PEQ_C eqp[16];
+    unsigned int bypass;				//bypass
+    unsigned int smooth;				//smooth
+}IG_PARACTL_PEQ16;
+
+typedef struct{
+    struct{
+        __OPACK32_T1S0(
+            OPACKU,gain,16				//gain_db = gain * 0.01 - 100;
+        );
+    }eqp[31];
+    unsigned int bypass;				//bypass
+    unsigned int smooth;				//smooth
+}IG_PARACTL_GEQ31_SHG1P3;
+typedef struct{
+    struct{
+        __OPACK32_T1S0(
+            OPACKU,gain,16				//gain_db = gain * 0.01 - 100;
+        );
+    }eqp[15];
+    unsigned int bypass;				//bypass
+    unsigned int smooth;				//smooth
+}IG_PARACTL_GEQ15_SHG2P3;
+typedef struct{
+    struct{
+        __OPACK32_T1S0(
+            OPACKU,gain,16				//gain_db = gain * 0.01 - 100;
+        );
+    }eqp[10];
+    unsigned int bypass;				//bypass
+    unsigned int smooth;				//smooth
+}IG_PARACTL_GEQ10_SHG1;
+
+enum{
+    FCT_FILTER_BUTTERWORTH = 0,
+    FCT_FILTER_LINKWITZ = 1,
+};
+typedef IG_SIGFLOW1X1 IG_SIGFLOW_FILTER;
+typedef struct{
+    __OPACK32_T2S0S1(
+        OPACKU,filterType,8,
+        OPACKU,orders,8					//只对lp,hp有效
+    );
+    __OPACK32_T2(
+        OPACKU,freq_hz,16,				//hz，
+        OPACKU,gain,16					//gain_db = gain * 0.01 - 100;
+    );
+    unsigned int bypass;				//bypass
+    unsigned int smooth;				//smooth
+}IG_PARACTL_FILTER;
+
+typedef struct{
+    __OPACK32_T2(
+        OPACKU,freq_hz,16,				//hz，
+        OPACKU,bandWidth,16				//oct = bandWidth/1000
+    );
+    unsigned int bypass;				//bypass
+    unsigned int smooth;				//smooth
+}IG_PARACTL_BPFILTER;
+
+typedef struct{
+    __OPACK32_T2(
+        OPACKU,freq_hz,16,				//hz，
+        OPACKU,q,16						//q = (float)q * 0.01;
+    );
+    __OPACK32_T2(
+        OPACKU,antiphase,16,
+        OPACKU,mute,16					//
+    );
+    unsigned int bypass;				//bypass
+    unsigned int smooth;				//smooth
+}IG_PARACTL_APFILTER;
+
+typedef IG_SIGFLOW1X2 IG_SIGFLOW_SPLIT2;
+typedef struct{
+    struct{
+        __OPACK32_T3(
+            OPACKU,mute,8,
+            OPACKU,gain,16,				//gain_db = gain * 0.01 - 100;
+            OPACKU,inverse,8
+        );
+    }in[1];
+    struct{
+        __OPACK32_T3(
+            OPACKU,filterType,8,
+            OPACKU,freq_hz,16,			//hz，
+            OPACKU,orders,8				//只对lp,hp有效
+        );
+    }filter[2];
+    struct{
+        __OPACK32_T3(
+            OPACKU,mute,8,
+            OPACKU,gain,16,				//gain_db = gain * 0.01 - 100;
+            OPACKU,inverse,8
+        );
+    }out[2];
+    unsigned int smooth;				//smooth,每一位对应不同滤波器
+}IG_PARACTL_SPLIT2;
+
+typedef IG_SIGFLOW1X3 IG_SIGFLOW_SPLIT3;
+typedef struct{
+    struct{
+        __OPACK32_T3(
+            OPACKU,mute,8,
+            OPACKU,gain,16,				//gain_db = gain * 0.01 - 100;
+            OPACKU,inverse,8
+        );
+    }in[1];
+    struct{
+        __OPACK32_T3(
+            OPACKU,filterType,8,
+            OPACKU,freq_hz,16,			//hz，
+            OPACKU,orders,8				//只对lp,hp有效
+        );
+    }filter[4];
+    struct{
+        __OPACK32_T3(
+            OPACKU,mute,8,
+            OPACKU,gain,16,				//gain_db = gain * 0.01 - 100;
+            OPACKU,inverse,8
+        );
+    }out[3];
+    unsigned int smooth;				//smooth
+}IG_PARACTL_SPLIT3;
+
+typedef IG_SIGFLOW1X4 IG_SIGFLOW_SPLIT4;
+typedef struct{
+    struct{
+        __OPACK32_T3(
+            OPACKU,mute,8,
+            OPACKU,gain,16,				//gain_db = gain * 0.01 - 100;
+            OPACKU,inverse,8
+        );
+    }in[1];
+    struct{
+        __OPACK32_T3(
+            OPACKU,filterType,8,
+            OPACKU,freq_hz,16,			//hz，
+            OPACKU,orders,8				//只对lp,hp有效
+        );
+
+    }filter[6];
+    struct{
+        __OPACK32_T3(
+            OPACKU,mute,8,
+            OPACKU,gain,16,				//gain_db = gain * 0.01 - 100;
+            OPACKU,inverse,8
+        );
+    }out[4];
+    unsigned int smooth;				//smooth
+}IG_PARACTL_SPLIT4;
+
+typedef IG_SIGFLOW0X1 IG_SIGFLOW_SIGGEN;
+typedef struct{
+    __OPACK32_T2(
+        OPACKU,freq_hz,16,				//hz，
+        OPACKU,gain,16					//gain_db = gain * 0.01 - 100;
+    );
+    __OPACK32_T1S0(
+        OPACKU,mute,8
+    );
+}IG_PARACTL_SIGGEN;
+
+enum{
+    DEV_METER_HOLDMODE_DEFAULT 		= 0X00,
+    DEV_METER_HOLDMODE_KEEPSETTIME 	= 0X10,
+    DEV_METER_HOLDMODE_KEEPMAXVALUE = 0X11,
+};
+
+typedef IG_SIGFLOW1X0 IG_SIGFLOW_METER1;
+typedef struct{
+    struct{
+        __OPACK32_T2S0S1(
+            OPACKU,ppmHoldCtrlMode,8,
+            OPACKU,ppmHoldTime_ms,16
+        );
+    }meter[1];
+}IG_PARACTL_METER1;
+
+typedef IG_SIGFLOW2X0 IG_SIGFLOW_METER2;
+typedef struct{
+    struct{
+        __OPACK32_T2S0S1(
+            OPACKU,ppmHoldCtrlMode,8,
+            OPACKU,ppmHoldTime_ms,16
+        );
+    }meter[2];
+}IG_PARACTL_METER2;
+
+typedef IG_SIGFLOW4X0 IG_SIGFLOW_METER4;
+typedef struct{
+    struct{
+        __OPACK32_T2S0S1(
+            OPACKU,ppmHoldCtrlMode,8,
+            OPACKU,ppmHoldTime_ms,16
+        );
+    }meter[4];
+}IG_PARACTL_METER4;
+
+typedef IG_SIGFLOW8X0 IG_SIGFLOW_METER8;
+typedef struct{
+    struct{
+        __OPACK32_T2S0S1(
+            OPACKU,ppmHoldCtrlMode,8,
+            OPACKU,ppmHoldTime_ms,16
+        );
+    }meter[8];
+}IG_PARACTL_METER8;
+
+typedef IG_SIGFLOW2X1 IG_SIGFLOW_GPI;
+#if 0
+typedef struct{
+    __OPACK32_T1S0(
+        OPACKU,chNo,8						//0,1，
+    );
+}IG_PARACTL_GPI;
+#else
+typedef struct{
+    __OPACK32_T3S0S1S2(
+        OPACKU,chNo,8,						//0,1，
+        OPACKU,gpiNo,8,						//0~8,0无效GPI,既不受GPI控制，1~8GPI编号
+        OPACKU,hw_gpiDecMode,8				//0外设直接传输硬件GPI切换的通道，通道编号由chNo决定，gpiNo无效传0，1外设只通知模块路由控制引脚编号，模块控制引脚可以更改(gpiNo)，模块的路由切换由引脚状态寄存器决定hwGpis(FC_HARDWARE_GPIS)决定 ,chNo无效传0;
+    );
+}IG_PARACTL_GPI;
+#endif
+
+
+typedef IG_SIGFLOW1X1 IG_SIGFLOW_FREQSHIFT;
+typedef struct{
+    __OPACK32_T2(
+        OPACKU,shiftfreq_hz,16,				//hz，
+        OPACKU,gain,16						//gain_db = gain * 0.01 - 100;
+    );
+}IG_PARACTL_FREQSHIFT;
+
+enum{
+    DEV_FREQSHIFTP_WM_BYPASS = 0,				//直通
+    DEV_FREQSHIFTP_WM_FIXFREQ,					//固定频移
+    DEV_FREQSHIFTP_WM_VARIABLEFREQ_LINE,		//线性变频频移
+    DEV_FREQSHIFTP_WM_VARIABLEFREQ_RANDOM,		//随机变频频移
+};
+
+typedef IG_SIGFLOW1X2 IG_SIGFLOW_FREQSHIFTP;
+typedef struct{
+    __OPACK32_T2(
+        OPACKU,shiftfreq_hz,16,				//hz，
+        OPACKU,phase,16						//[0,360]realphase = phase - 180;
+    );
+    __OPACK32_T1S0(
+        OPACKU,gain,16						//gain_db = gain * 0.01 - 100;
+    );
+    __OPACK32_T3(
+        OPACKU,shiftfreqSpan_hz,16,			//hz，[0,2*shiftfreq_hz]
+        OPACKU,shiftfreqSpeed_hz,8,			//hz[1,100];
+        OPACKU,shiftfreqMode,8				//hz[1,100];
+    );
+}IG_PARACTL_FREQSHIFTP;
+
+/*
+ * threadLevel_db = threadLevel * 0.01 - 100;
+ * depthenable,无效参数
+ * depth_db = depth * 0.01 - 100;
+ * noiseMuteEnable，无效参数
+ * noiseGain_db = noiseGain * 0.01 - 100;
+ * (priorGain_db)preInGain_db = preInGain * 0.01 - 100;	前置增益不放大信号，只是增加信号获得自动增益分配的权重
+ * mixOutGain_db = mixOutGain * 0.01 - 100;
+ * inMute 1静音的输入通道不参与自动混音,0不静音
+ */
+#define IG_PARACTL_AUTOMIXGS_DEF(ch) 	\
+typedef struct{							\
+    __OPACK32_T2(						\
+        OPACKU,threadLevel,16,			\
+        OPACKU,attackT_ms,16			\
+    );									\
+    __OPACK32_T2(						\
+        OPACKU,releaseT_ms,16,			\
+        OPACKU,holdT_ms,16				\
+    );									\
+    __OPACK32_T2(						\
+        OPACKU,detectT_ms,16,			\
+        OPACKU,depth,16					\
+    );									\
+    __OPACK32_T1S0(						\
+        OPACKU,noiseGain,16				\
+    );									\
+    struct{								\
+        __OPACK32_T2S0S1(				\
+            OPACKU,inMute,8,			\
+            OPACKU,priorGain,16			\
+        );								\
+    }inCtrl[ch];						\
+    __OPACK32_T2S0S1(					\
+        OPACKU,mixOutMute,8,			\
+        OPACKU,mixOutGain,16			\
+    );									\
+}
+
+#define IG_PARAGET_AUTOMIXGS_DEF(ch) 	\
+typedef struct{							\
+    struct{								\
+        __OPACK32_T2(					\
+            OPACKU,gain1,16,			\
+            OPACKU,gain2,16				\
+        );								\
+    }appliedGain[ch>>1];				\
+}
+IG_PARACTL_AUTOMIXGS_DEF(4)		IG_PARACTL_AUTOMIXGS4;
+IG_PARACTL_AUTOMIXGS_DEF(8)		IG_PARACTL_AUTOMIXGS8;
+IG_PARACTL_AUTOMIXGS_DEF(16)	IG_PARACTL_AUTOMIXGS16;
+IG_PARACTL_AUTOMIXGS_DEF(32)	IG_PARACTL_AUTOMIXGS32;
+IG_PARAGET_AUTOMIXGS_DEF(4)		IG_PARAGET_AUTOMIXGS4;
+IG_PARAGET_AUTOMIXGS_DEF(8)		IG_PARAGET_AUTOMIXGS8;
+IG_PARAGET_AUTOMIXGS_DEF(16)	IG_PARAGET_AUTOMIXGS16;
+IG_PARAGET_AUTOMIXGS_DEF(32)	IG_PARAGET_AUTOMIXGS32;
+typedef IG_SIGFLOW4X5 IG_SIGFLOW_AUTOMIXGS4;
+typedef IG_SIGFLOW8X9 IG_SIGFLOW_AUTOMIXGS8;
+typedef IG_SIGFLOW16X17 IG_SIGFLOW_AUTOMIXGS16;
+typedef IG_SIGFLOW32X33 IG_SIGFLOW_AUTOMIXGS32;
+
+
+/*
+ * manual	0人控关闭1人控打开
+ * gateMode 0自动模式automatic，超过阈值可打开门限；1优先级模式priority，同属于优先级模式的通道只有最高优先级超过阈值的通道的可打开； 2抢占模式，filibuster同属于抢占模式的信号只有第一个超过阈值的通道的可打开
+ * priority 优先级等级(0-1000)越大优先级越高
+ * threshold_db = threshold * 0.01 - 100;
+ * mixOutGain_db = mixOutGain * 0.01 - 100;
+ * depth_db = depth * 0.01 - 100;
+ * attenStep_db = attenStep * 0.01 - 100;
+ * attenMax_db = attenMax * 0.01 - 100;
+ * bgpercentage_f = (bgpercentage * 0.01)%;
+ * attenGain_db = attenGain * 0.01 - 100;
+ * attenuationType 0 no attenuation 1attenuationType 2attenuationType
+ */
+#define IG_PARACTL_AUTOMIXNGAT_DEF(ch) 	\
+typedef struct{							\
+    struct{								\
+        __OPACK32_T4(					\
+            OPACKU,manual,1,			\
+            OPACKU,gateMode,3,			\
+            OPACKU,priority,12,			\
+            OPACKU,threshold,16			\
+        );								\
+    }inChAttr[ch];						\
+    __OPACK32_T2S0S1(					\
+        OPACKU,mixOutMute,8,			\
+        OPACKU,mixOutGain,16			\
+    );									\
+    __OPACK32_T3(						\
+        OPACKU,lastMicOn,8,				\
+        OPACKU,idGating,8,				\
+        OPACKU,bgpercentage,16			\
+    );									\
+    __OPACK32_T2(						\
+        OPACKU,depth,16,				\
+        OPACKU,gateHoldT_ms,16			\
+    );									\
+    __OPACK32_T3(						\
+        OPACKU,maxPassChs,8,			\
+        OPACKU,attenuationType,8,		\
+        OPACKU,attenResponseT_ms,16		\
+    );									\
+    __OPACK32_T2(						\
+        OPACKU,attenStep,16,			\
+        OPACKU,attenMax,16				\
+    );									\
+}
+#define IG_PARAGET_AUTOMIXNGAT_DEF(x32) 	\
+typedef struct{								\
+    __OPACK32_T2S0S1(						\
+        OPACKU,passNom,8,					\
+        OPACKU,attenGain,16					\
+    );										\
+    unsigned int openstate[x32];			\
+}
+
+typedef IG_SIGFLOW4X5 IG_SIGFLOW_AUTOMIXNGAT4;
+IG_PARACTL_AUTOMIXNGAT_DEF(4) IG_PARACTL_AUTOMIXNGAT4;
+typedef IG_SIGFLOW8X9 IG_SIGFLOW_AUTOMIXNGAT8;
+IG_PARACTL_AUTOMIXNGAT_DEF(8) IG_PARACTL_AUTOMIXNGAT8;
+typedef IG_SIGFLOW16X17 IG_SIGFLOW_AUTOMIXNGAT16;
+IG_PARACTL_AUTOMIXNGAT_DEF(16) IG_PARACTL_AUTOMIXNGAT16;
+typedef IG_SIGFLOW32X33 IG_SIGFLOW_AUTOMIXNGAT32;
+IG_PARACTL_AUTOMIXNGAT_DEF(32)	IG_PARACTL_AUTOMIXNGAT32;
+IG_PARAGET_AUTOMIXNGAT_DEF(1)	IG_PARAGET_AUTOMIXNGAT4;
+IG_PARAGET_AUTOMIXNGAT_DEF(1)	IG_PARAGET_AUTOMIXNGAT8;
+IG_PARAGET_AUTOMIXNGAT_DEF(1)	IG_PARAGET_AUTOMIXNGAT16;
+IG_PARAGET_AUTOMIXNGAT_DEF(1)	IG_PARAGET_AUTOMIXNGAT32;
+
+
+/*
+ * manual	0人控关闭1人控打开
+ * postGateMute 1:通道输出静音，0，通道输出受推子控制.推子对音频传输到直通输出和混音输出同时有效果。推子不影响信号是否通过门限
+ * postGateGain_db = postGateGain * 0.01 -100;
+ * mixOutGain_db = mixOutGain * 0.01 - 100;
+ * noEffectPass	非人控通道无通道满足通过门限的情况：0不通过所有通道，1通过最后一个非人工使能通道，2通过默认通道
+ * defaultch 非人控通道无通道满足通过门限的情况下的默认通道
+ * threAboveNoise_db = threAboveNoise * 0.01 - 100; [0,50]
+ * depth_db = depth * 0.01 - 100;
+ * autoMaxPassChs 允许通过非人控最大通道数
+ * attenStep_db = attenStep * 0.01 - 100;
+ * attenMax_db = attenMax * 0.01 - 100;
+ * attenGain_db = attenGain * 0.01 - 100;
+ * attenuationType 0 no attenuation 1attenuationType 2attenuationType
+ */
+#define IG_PARACTL_AUTOMIXNGRT_DEF(ch) 	\
+typedef struct{							\
+    struct{								\
+        __OPACK32_T3S0S1S2(				\
+            OPACKU,manual,1,			\
+            OPACKU,postGateMute,7,		\
+            OPACKU,postGateGain,16		\
+        );								\
+    }inChAttr[ch];						\
+    __OPACK32_T2S0S1(					\
+        OPACKU,mixOutMute,8,			\
+        OPACKU,mixOutGain,16			\
+    );									\
+    __OPACK32_T4(						\
+        OPACKU,idGating,4,				\
+        OPACKU,noEffectPass,4,			\
+        OPACKU,defaultch,8,				\
+        OPACKU,threAboveNoise,16		\
+    );									\
+    __OPACK32_T2(						\
+        OPACKU,depth,16,				\
+        OPACKU,gateHoldT_ms,16			\
+    );									\
+    __OPACK32_T4(						\
+        OPACKU,autoMaxPassChs,8,		\
+        OPACKU,directPassAttenEnable,4,	\
+        OPACKU,attenuationType,4,		\
+        OPACKU,attenResponseT_ms,16		\
+    );									\
+    __OPACK32_T2(						\
+        OPACKU,attenStep,16,			\
+        OPACKU,attenMax,16				\
+    );									\
+}
+#define IG_PARAGET_AUTOMIXNGRT_DEF(ch) 	\
+typedef struct{								\
+    __OPACK32_T2S0S1(						\
+        OPACKU,passNom,8,					\
+        OPACKU,attenGain,16					\
+    );										\
+    struct{									\
+        __OPACK32_T2S0S1(					\
+            OPACKU,openState,8,				\
+            OPACKU,sigAboveNoise,16			\
+        );									\
+    }chMixState[ch];							\
+}
+typedef IG_SIGFLOW4X5 IG_SIGFLOW_AUTOMIXNGRT4;
+IG_PARACTL_AUTOMIXNGRT_DEF(4) IG_PARACTL_AUTOMIXNGRT4;
+typedef IG_SIGFLOW8X9 IG_SIGFLOW_AUTOMIXNGRT8;
+IG_PARACTL_AUTOMIXNGRT_DEF(8) IG_PARACTL_AUTOMIXNGRT8;
+typedef IG_SIGFLOW16X17 IG_SIGFLOW_AUTOMIXNGRT16;
+IG_PARACTL_AUTOMIXNGRT_DEF(16) IG_PARACTL_AUTOMIXNGRT16;
+typedef IG_SIGFLOW32X33 IG_SIGFLOW_AUTOMIXNGRT32;
+IG_PARACTL_AUTOMIXNGRT_DEF(32)	IG_PARACTL_AUTOMIXNGRT32;
+
+IG_PARAGET_AUTOMIXNGRT_DEF(4)	IG_PARAGET_AUTOMIXNGRT4;
+IG_PARAGET_AUTOMIXNGRT_DEF(8)	IG_PARAGET_AUTOMIXNGRT8;
+IG_PARAGET_AUTOMIXNGRT_DEF(16)	IG_PARAGET_AUTOMIXNGRT16;
+IG_PARAGET_AUTOMIXNGRT_DEF(32)	IG_PARAGET_AUTOMIXNGRT32;
+
+typedef IG_SIGFLOW2X2 IG_SIGFLOW_HARDAEC;
+typedef struct{
+    __OPACK32_T2(
+        OPACKU,micInGain,16,						//gain_db = micIngain * 0.01 - 100;
+        OPACKU,lineInGain,16
+    );
+    __OPACK32_T2(
+        OPACKU,speakOutGain,16,
+        OPACKU,lineOutGain,16
+    );
+    __OPACK32_T2S0S1(
+        OPACKU,micToSpeakGain,16,
+        OPACKU,micToSpeakSwitch,8
+    );
+    __OPACK32_T2S0S1(
+        OPACKU,NRGain,16,
+        OPACKU,NRSwitch,8
+    );
+}IG_PARACTL_HARDAEC;
+
+typedef IG_SIGFLOW2X2 IG_SIGFLOW_SOFTAEC;
+typedef struct{
+    __OPACK32_T2S0S1(
+        OPACKU,micToSpeakGain,16,
+        OPACKU,micToSpeakSwitch,8
+    );
+    __OPACK32_T2S0S1(
+        OPACKU,NRGain,16,
+        OPACKU,NRSwitch,8
+    );
+    unsigned int remain[8];
+}IG_PARACTL_SOFTAEC;
+
+typedef struct{
+    IG_SIGFLOW32X32 flow;
+    unsigned int exdata;							//留给上位机使用的额外数据，本地不用
+}IG_SIGFLOW_SIGSWITCH;
+
+typedef struct{
+    unsigned int sigswitch;							//信号通断开关
+    unsigned int exdata;							//留给上位机使用的额外数据，本地不用
+}IG_PARACTL_SIGSWITCH;
+
+typedef struct{
+    IG_SIGFLOW48X48 flow;
+    unsigned int exdata;							//留给上位机使用的额外数据，本地不用
+}IG_SIGFLOW_SIGSWITCH48;
+
+typedef struct{
+    unsigned int sigswitch[2];						//信号通断开关
+    unsigned int exdata;							//留给上位机使用的额外数据，本地不用
+}IG_PARACTL_SIGSWITCH48;
+
+typedef IG_SIGFLOW1X1 IG_SIGFLOW_SOFTFIR1R;
+typedef IG_SIGFLOW2X2 IG_SIGFLOW_SOFTFIR2R;
+typedef IG_SIGFLOW4X4 IG_SIGFLOW_SOFTFIR4R;
+typedef struct{
+    float coeff[256];
+    __OPACK32_T2(
+        OPACKU,shift,16,
+        OPACKU,len,16
+    );
+    __OPACK32_T2S0S1(
+        OPACKU,effect,8,
+        OPACKU,bypass,8
+    );
+}IG_PARACTL_SOFTFIR;
+
+typedef IG_SIGFLOW1X1 IG_SIGFLOW_NFC;
+typedef struct{
+    __OPACK32_T4(
+        OPACKU,outGain,16,							//outGain_dbfs = outGain * 0.01 - 100;
+        OPACKU,outMode,4,							//0commen，1bypass，2mute
+        OPACKU,clearfilter,4,						//0。filter work;1.clear dymatic filter;2.clear all filter;
+        OPACKU,bandwidth,8							//[4,128]
+    );
+    __OPACK32_T3(
+        OPACKU,fixfilters,8,
+        OPACKU,dynfilters,8,
+        OPACKU,maxNotchDepth,16						//[...,-6]maxNotchDepth_dbfs = maxNotchDepth * 0.01 - 100;
+    );
+}IG_PARACTL_NFC;
+typedef struct{
+    __OPACK32_T2(
+        OPACKU,howlFreqs,16,
+        OPACKU,rtNotchDepth,16						//[...,-6]maxNotchDepth_dbfs = maxNotchDepth * 0.01 - 100;
+    );
+}IG_PARAGET_NFC_NF;
+typedef struct{
+    IG_PARAGET_NFC_NF howl[8];
+}IG_PARAGET_NFC_8NF;
+typedef struct{
+    IG_PARAGET_NFC_NF howl[16];
+}IG_PARAGET_NFC_16NF;
+typedef struct{
+    IG_PARAGET_NFC_NF howl[24];
+}IG_PARAGET_NFC_24NF;
+typedef struct{
+    IG_PARAGET_NFC_NF howl[32];
+}IG_PARAGET_NFC_32NF;
+
+typedef IG_SIGFLOW5X4 IG_SIGFLOW_PDUCKER4;
+typedef IG_SIGFLOW9X8 IG_SIGFLOW_PDUCKER8;
+typedef IG_SIGFLOW17X16 IG_SIGFLOW_PDUCKER16;
+typedef IG_SIGFLOW33X32 IG_SIGFLOW_PDUCKER32;
+typedef struct{
+    __OPACK32_T2(
+        OPACKU,attackT_ms,16,
+        OPACKU,releaseT_ms,16
+    );
+    __OPACK32_T2(
+        OPACKU,holdT_ms,16,
+        OPACKU,DetectT_ms,16
+    );
+    __OPACK32_T2(
+        OPACKU,threshhold,16,						//threshhold_dbfs = threshhold * 0.01 - 100;
+        OPACKU,depth,16								//depth_dbfs = depth * 0.01 - 100;
+    );
+    __OPACK32_T2(
+        OPACKU,priorChInGain,16,					//priorChInGain_dbfs = priorChInGain * 0.01 - 100;
+        OPACKU,priorChOutGain,16					//priorChInGain_dbfs = priorChInGain * 0.01 - 100;
+    );
+    __OPACK32_T2S0S1(
+        OPACKU,mixOutGain,16,
+        OPACKU,bypass,8
+    );
+}IG_PARACTL_PDUCKER;
+typedef struct{
+    __OPACK32_T2(
+        OPACKU,mainChDuckerAppliedGain,16,			//detectorPriorChInLevel_dbfs = detectorPriorChInLevel * 0.01 - 100;
+        OPACKU,detectorPriorChInLevel,16			//detectorPriorChInLevel_dbfs = detectorPriorChInLevel * 0.01 - 100;
+    );
+}IG_PARAGET_PDUCKER;
+
+typedef IG_SIGFLOW1X1 IG_SIGFLOW_GAINRAMP1;
+typedef IG_SIGFLOW2X2 IG_SIGFLOW_GAINRAMP2;
+typedef IG_SIGFLOW4X4 IG_SIGFLOW_GAINRAMP4;
+typedef IG_SIGFLOW8X8 IG_SIGFLOW_GAINRAMP8;
+typedef IG_SIGFLOW16X16 IG_SIGFLOW_GAINRAMP16;
+typedef IG_SIGFLOW32X32 IG_SIGFLOW_GAINRAMP32;
+typedef struct{
+    __OPACK32_T2(
+        OPACKU,targetAT_ms,16,
+        OPACKU,targetBT_ms,16
+    );
+    __OPACK32_T2S0S1(
+        OPACKU,unmuteT_ms,16,
+        OPACKU,effectGain,8							//0 mute ,1 targetGainA ,2 targetGainB
+    );
+    __OPACK32_T2(
+        OPACKU,targetGainA,16,						//targetGainA_dbfs = targetGainA * 0.01 - 100;
+        OPACKU,targetGainB,16						//targetGainA_dbfs = targetGainA * 0.01 - 100;
+    );
+}IG_PARACTL_GAINRAMP;
+typedef struct{
+    __OPACK32_T1S0(
+        OPACKU,rtRampGain,16						//rtRampGain_dbfs = rtRampGain * 0.01 - 100;
+    );
+}IG_PARAGET_GAINRAMP;
+
+typedef IG_SIGFLOW1X1 IG_SIGFLOW_GAIN1;
+typedef IG_SIGFLOW2X2 IG_SIGFLOW_GAIN2;
+typedef IG_SIGFLOW4X4 IG_SIGFLOW_GAIN4;
+typedef IG_SIGFLOW8X8 IG_SIGFLOW_GAIN8;
+typedef IG_SIGFLOW16X16 IG_SIGFLOW_GAIN16;
+typedef IG_SIGFLOW32X32 IG_SIGFLOW_GAIN32;
+typedef struct{
+    __OPACK32_T3S0S1S2(
+        OPACKU,tsMode,4,			//2bypass,1静音,0正常输出
+        OPACKU,antiPhase,4,			//1反向，0正向
+        OPACKU,gain,16				//1开，0关,gain_db = gain * 0.01 - 100;
+    );
+}IG_PARACTL_GAIN;
+
+typedef IG_SIGFLOW2X1 IG_SIGFLOW_CROSSFADER2X1;
+typedef IG_SIGFLOW4X2 IG_SIGFLOW_CROSSFADER4X2;
+typedef IG_SIGFLOW8X4 IG_SIGFLOW_CROSSFADER8X4;
+typedef IG_SIGFLOW16X8 IG_SIGFLOW_CROSSFADER16X8;
+typedef IG_SIGFLOW32X16 IG_SIGFLOW_CROSSFADER32X16;
+typedef struct{
+    __OPACK32_T3(
+        OPACKU,chBandSwT_ms,24,				//通道组切换时间
+        OPACKU,targetChBand,4,				//0,通道组A;1通道组B
+        OPACKU,sumType,4					//0,Gain;1power
+    );
+}IG_PARACTL_CROSSFADER;
+typedef struct{
+    __OPACK32_T2(
+        OPACKU,chBandAGain,16,						//chBandAGain_dbfs = chBandAGain * 0.01 - 100;
+        OPACKU,chBandBGain,16						//chBandBGain_dbfs = chBandBGain * 0.01 - 100;
+    );
+    __OPACK32_T1S0(
+        OPACKU,chBandRtPos,16						//chBandRtPos_percent = chBandRtPos * 0.01;
+    );
+}IG_PARAGET_CROSSFADER;
+
+typedef IG_SIGFLOW0X1 IG_SIGFLOW_AUDIOPLAYER1;
+typedef IG_SIGFLOW0X2 IG_SIGFLOW_AUDIOPLAYER2;
+typedef IG_SIGFLOW0X4 IG_SIGFLOW_AUDIOPLAYER4;
+typedef IG_SIGFLOW0X8 IG_SIGFLOW_AUDIOPLAYER8;
+typedef IG_SIGFLOW0X16 IG_SIGFLOW_AUDIOPLAYER16;
+typedef struct{
+    void * paraCtrl;
+    unsigned int paraLen;
+}IG_PARACTL_AUDIOPLAYER;
+typedef struct{
+    void * paraData;
+    unsigned int paraLen;
+    unsigned int updateParaFlag;
+}IG_PARAGET_AUDIOPLAYER;
+
+typedef IG_SIGFLOW1X0 IG_SIGFLOW_AUDIORECORDER1;
+typedef IG_SIGFLOW2X0 IG_SIGFLOW_AUDIORECORDER2;
+typedef IG_SIGFLOW4X0 IG_SIGFLOW_AUDIORECORDER4;
+typedef IG_SIGFLOW8X0 IG_SIGFLOW_AUDIORECORDER8;
+typedef IG_SIGFLOW16X0 IG_SIGFLOW_AUDIORECORDER16;
+typedef struct{
+    void * paraCtrl;
+    unsigned int paraLen;
+}IG_PARACTL_AUDIORECORDER;
+typedef struct{
+    void * paraData;
+    unsigned int paraLen;
+    unsigned int updateParaFlag;
+}IG_PARAGET_AUDIORECORDER;
+
+#endif /* INTERFACEPROTOCOL_H_ */
+

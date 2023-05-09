@@ -1,0 +1,223 @@
+* {font-family: "Microsoft YaHei";}
+QMainWindow {background:#454953;}
+
+/*================菜单、工具栏、状态栏================*/
+QMenuBar{background-color:#454953;color: white;}
+QMenuBar::item:selected,QMenuBar::item:pressed {background:#375675;}
+QMenu{background-color:#454953;color: white; border: 1px solid rgb(130,135,144);}
+QMenu::item{background:#454953;}
+QMenu::item:hover,QMenu::item:selected{ background:#375675; }
+QToolBar { background-color:#454953; spacing: 2px; border-top: 0px; }
+QStatusBar{border: 1px solid rgb(130,135,144);background-color:#40454A;}
+QStatusBar *{border: 0px;color: white;background-color:transparent;padding-left:5px;padding-right:5px;}
+QMainWindow QAbstractScrollArea{ background:#454953; }
+QMainWindow QTabBar {
+    border: 1px solid transparent;
+    background: transparent;
+    padding-bottom: 0px;
+}
+QMainWindow QTabBar::tab {
+    border-bottom-left-radius:4px;
+    border-bottom-right-radius:4px;
+    border: 1px solid #828790;
+    background:transparent;
+    height: 22px;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 1px;
+}
+QMainWindow QTabBar::tab:selected {background:#375675; color: #00FF00;}
+QMainWindow QTabBar::tab:!selected {background:transparent;}
+
+QMdiArea QTabBar {
+    border: 1px solid transparent;
+    background: transparent;
+    padding-bottom: 0px;
+}
+QMdiArea QTabBar::tab {
+    border-top-left-radius:4px;
+    border-top-right-radius:4px;
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
+    border: 1px solid #828790;
+    background:transparent;
+    height: 22px;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 1px;
+}
+QMdiArea QTabBar::tab:selected {background:#375675; color: #00FF00;}
+QMdiArea QTabBar::tab:!selected {background:transparent;}
+QMainWindow QTabBar::close-button {
+    image: url(:/Image/KemuBlack/dockClose.png);
+    subcontrol-origin: padding;
+    subcontrol-position: right;
+    border-radius: 3px;
+    padding: 3px;
+}
+QMainWindow QTabBar::close-button:hover {
+    background: #E5F3FF;
+}
+
+/*================扁平化滚动条================*/
+/*设置垂直滚动条*/
+QMainWindow QScrollBar:vertical{background-color:#40454A;width:7px;padding-top:7px;padding-bottom:7px;}
+QMainWindow QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical{background-color:transparent;}
+QMainWindow QScrollBar::handle:vertical{background:rgba(125,125,135,0.7);border:0px;border-radius:3px; }
+QMainWindow QScrollBar::handle:vertical:hover{background:rgba(125,125,135,1)}
+QMainWindow QScrollBar::sub-line:vertical{height:7px;width:7px;border-image:url(:/Image/KemuBlack/arrowUp.png);}
+QMainWindow QScrollBar::add-line:vertical{height:7px;width:7px;border-image:url(:/Image/KemuBlack/arrowDown.png);}
+QMainWindow QScrollBar::sub-line:vertical:hover,QScrollBar::add-line:vertical:hover{background:rgb(125,125,135);}
+/*设置水平滚动条*/
+QMainWindow QScrollBar:horizontal{background-color:#40454A;height:7px;padding-left:7px;padding-right:7px;}
+QMainWindow QScrollBar::add-page:horizontal,QScrollBar::sub-page:horizontal{background-color:transparent;}
+QMainWindow QScrollBar::handle:horizontal{background:rgba(125,125,135,0.7); border:0px;border-radius:3px;}
+QMainWindow QScrollBar::handle:horizontal:hover{background:rgba(125,125,135,1);}
+QMainWindow QScrollBar::sub-line:horizontal{subcontrol-position:left;height:7px;width:7px;border-image:url(:/Image/KemuBlack/arrowRight.png);}
+QMainWindow QScrollBar::add-line:horizontal{height:7px;width:7px;border-image:url(:/Image/KemuBlack/arrowLeft.png);}
+QMainWindow QScrollBar::sub-line:horizontal:hover,QScrollBar::add-line:horizontal:hover{background:rgb(125,125,135);}
+
+/*================DockWidget================*/
+QDockWidget {
+    color: white;
+    border: 1px solid #828790;
+    titlebar-close-icon: url(:/Image/KemuBlack/dockClose.png);
+    titlebar-normal-icon: url(:/Image/KemuBlack/dockNormal.png);
+}
+QDockWidget::title {
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    background-color : #454953;
+    border: 1px solid #828790;
+    text-align: left;
+}
+QDockWidget QHeaderView::section{
+    background-color: #4B4F57;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #454953;
+}
+QMainWindow QTableCornerButton::section {
+    width: 30px;
+    background:#454953;
+    border: 0px;
+}
+QMainWindow  QTableView {
+    color: white;
+    background:#454953;
+    gridline-color:#454953;
+    alternate-background-color:rgba(80,85,90,0.5);
+    selection-color: white;
+    selection-background-color: #375675;
+    min-height:150;
+}
+QMainWindow QTreeView {
+    background-color: #454953;
+    color: white;
+}
+QMainWindow QTreeView::item {color: white;}
+QMainWindow QTreeView::item:hover { background: #3E5065; }
+QMainWindow QTreeView::item:selected:active,QTreeView::item:selected:!active{ background: #375675; }
+QMainWindow QTreeView::branch:open:has-children {background-image: url(:/Image/KemuBlack/arrowOpen.png);}
+QMainWindow QTreeView::branch:closed:has-children {background-image: url(:/Image/KemuBlack/arrowClose.png);}
+QMainWindow QLineEdit#searchText{background:#555963;  color: white;border: 1px solid #828790;}
+QMainWindow QPushButton#searchButton{border-image:url(:/Image/KemuBlack/search.png); background:transparent;}
+QMainWindow QPushButton#TextBtn     { border: 0px; border-radius: 3px; padding: 1px; image: url(:/Image/KemuBlack/AuxiliaryWords.png); }
+QMainWindow QPushButton#GroupBoxBtn { border: 0px; border-radius: 3px; padding: 1px; image: url(:/Image/KemuBlack/AuxiliaryBox.png); }
+QMainWindow QPushButton#PolylineBtn { border: 0px; border-radius: 3px; padding: 1px; image: url(:/Image/KemuBlack/AuxiliaryLine.png); }
+QMainWindow QPushButton#addBtn{ border: 0px; min-width: 16; max-width: 16; image: url(:/Image/snapshot_add.png); }
+QMainWindow QPushButton#addBtn:hover{ image: url(:/Image/snapshot_add_hover.png); }
+
+QMessageBox *{color:black;}
+QLuaTextEdit {
+    color: #EDC394;
+    background-color: #303030;
+    selection-background-color: #404A5A;
+}
+/*================登录界面================*/
+QDialog#LoginDialog {background-color: #454953;border: 1px solid #606060;}
+QDialog#LoginDialog QPushButton{background-color: #454953;border-radius: 5px;color: white;
+    min-height:20px;margin-top: 8px;}
+QDialog#LoginDialog QPushButton:hover,QPushButton::pressed{background-color: #375675;}
+QDialog#LoginDialog QLabel {color: white;}
+
+
+/***********New Solution**********/
+
+QWidget#NewSolution,
+QWidget#widget_welcome,
+QWidget#widget_cfgNewSln {
+        border: 1px solid #A0A0A0;
+        background-color: #454953;
+        color: white;
+}
+QWidget#NewSolution>*,
+QWidget#widget_welcome>*,
+QWidget#widget_cfgNewSln>* {
+        font-family: "Microsoft YaHei";
+        border: 0px solid #A0A0A0;
+        background-color: transparent;
+        color: white;
+}
+
+QWidget#widget_welcome>QPushButton {
+        padding-left: 10px;
+        height: 45px;
+        min-width: 200px;
+        font-size: 19px;
+        text-align: left;
+        background-color: #717173;
+}
+
+QWidget#widget_cfgNewSln>QPushButton {
+        min-height: 35px;
+        width: 100px;
+        font-size: 15px;
+        background-color: #717173;
+}
+
+QWidget#widget_cfgNewSln>QPushButton:hover {
+        background: #7189A3;
+}
+
+QLabel#label_welcome,
+QLabel#label_cfgNewSln {
+        font-size: 31px;
+        font-weight: normal;
+}
+
+QLabel#label_gettingStarted,
+QLabel#label_earlierSolution,
+QLabel#label_recently {
+        font-size: 20px;
+}
+QLabel#label_proName,
+QLabel#label_slnPath,
+QLabel#label_slnName {
+        font-size: 17px;
+}
+
+QPushButton#pushButton_newSln:hover, QPushButton#pushButton_openSln:hover { background: #7189A3; }
+
+
+QLineEdit#lineEdit_search {
+        min-height: 35px;
+        font-size: 15px;
+        border: 1px solid #A0A0A0;
+}
+
+QLineEdit#lineEdit_proName,
+QLineEdit#lineEdit_slnPath,
+QLineEdit#lineEdit_slnName {
+        min-height: 35px;
+        font-size: 12px;
+        border: 1px solid #A0A0A0;
+}
+
+QLineEdit#lineEdit_slnName:disabled { border: 1px solid #818181; color: #818181; }
+
+QListWidget#listWidget_earlerSln * {
+        color: white;
+}

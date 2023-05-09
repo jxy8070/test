@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CfgSettingAudioRecord</class>
+ <widget class="QWidget" name="CfgSettingAudioRecord">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>559</width>
+    <height>527</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="2" colspan="2">
+    <widget class="QLabel" name="label_record">
+     <property name="text">
+      <string>Record</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="6">
+    <widget class="QLabel" name="label_stop">
+     <property name="text">
+      <string>Stop</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="2" colspan="3">
+    <widget class="QPushButton" name="pushButton_record">
+     <property name="minimumSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="6">
+    <widget class="QPushButton" name="pushButton_stop">
+     <property name="minimumSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_root">
+     <property name="text">
+      <string>Root</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1" colspan="7">
+    <widget class="QComboBox" name="comboBox_root"/>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_dir">
+     <property name="text">
+      <string>Directory</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1" colspan="7">
+    <widget class="QComboBox" name="comboBox_dir"/>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="label_prefix">
+     <property name="text">
+      <string>Prefix</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1" colspan="7">
+    <widget class="QLineEdit" name="lineEdit_prefix">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="label_include">
+     <property name="text">
+      <string>Include</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QCheckBox" name="checkBox_data">
+     <property name="text">
+      <string>Data</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="4" colspan="3">
+    <widget class="QCheckBox" name="checkBox_time">
+     <property name="text">
+      <string>Time</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="7">
+    <widget class="QCheckBox" name="checkBox_sequence">
+     <property name="text">
+      <string>Sequence</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="label_fileName">
+     <property name="text">
+      <string>FileName</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1" colspan="7">
+    <widget class="QLineEdit" name="lineEdit_fileName">
+     <property name="text">
+      <string>*******.mp3</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="1">
+    <widget class="QLabel" name="label_format">
+     <property name="text">
+      <string>Format</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="3" colspan="4">
+    <widget class="QLabel" name="label_Bitrate">
+     <property name="text">
+      <string>Bitrate/resolution</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="7">
+    <widget class="QLabel" name="label_samplerate">
+     <property name="text">
+      <string>Sample rate</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="8" column="1">
+    <widget class="QComboBox" name="comboBox_format"/>
+   </item>
+   <item row="8" column="3" colspan="4">
+    <widget class="QComboBox" name="comboBox_bitrate"/>
+   </item>
+   <item row="8" column="7">
+    <widget class="QComboBox" name="comboBox_sampleRate"/>
+   </item>
+   <item row="9" column="1">
+    <widget class="QLabel" name="label_length">
+     <property name="text">
+      <string>Length</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="3" colspan="4">
+    <widget class="QLabel" name="label_timeAvailable">
+     <property name="text">
+      <string>Time aveilable</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="7">
+    <widget class="QLabel" name="label_spaceAvailable">
+     <property name="text">
+      <string>Space aveilable</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="1" colspan="2">
+    <widget class="QLineEdit" name="lineEdit_length">
+     <property name="text">
+      <string>00:00:00</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="3" colspan="4">
+    <widget class="QLineEdit" name="lineEdit_timeAveilable">
+     <property name="text">
+      <string>00:00:00</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="10" column="7">
+    <widget class="QLineEdit" name="lineEdit_spaceAveilable">
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="1">
+    <widget class="QLabel" name="label_limitFileLength">
+     <property name="text">
+      <string>Limit file length</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="3" colspan="4">
+    <widget class="QComboBox" name="comboBox_limitFileLength"/>
+   </item>
+   <item row="12" column="5" colspan="3">
+    <widget class="QCheckBox" name="checkBox_Continuous">
+     <property name="text">
+      <string>Continuous recording mode</string>
+     </property>
+    </widget>
+   </item>
+   <item row="13" column="5" colspan="3">
+    <widget class="QCheckBox" name="checkBox_Quantize">
+     <property name="text">
+      <string>Quantize rollover time</string>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="1">
+    <widget class="QLabel" name="label_cleanupFiles">
+     <property name="text">
+      <string>Cleanup files</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="14" column="2" colspan="4">
+    <widget class="QComboBox" name="comboBox_cleanupFiles"/>
+   </item>
+   <item row="15" column="1">
+    <widget class="QLabel" name="label_maximunAge">
+     <property name="text">
+      <string>Maximun age</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="15" column="2" colspan="4">
+    <widget class="QComboBox" name="comboBox_maximunAge"/>
+   </item>
+   <item row="16" column="1">
+    <widget class="QLabel" name="label_TotalSizeLimit">
+     <property name="text">
+      <string>Total size limit</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item row="16" column="2" colspan="4">
+    <widget class="QComboBox" name="comboBox_TotalSizeLimit"/>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
